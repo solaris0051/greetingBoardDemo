@@ -1,28 +1,48 @@
 @charset "UTF-8";
 
 body {
-  color: white;
-  text-align: center;
-  font-family: "Courgette", cursive;
-  font-display: swap;
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+	min-height: 100vh;
+	color: white;
+	text-align: center;
+	font-family: "Courgette", cursive;
+	margin: 0;
+	padding: 0;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
-/* #title { */
+main {
+	flex-shrink: 1;
+}
+
 #greeting_words {
-  line-height: 300px;
-  font-size: 4rem;
+	color: #DAA520;
+	font-size: 3rem;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	background-color: transparent;
+	border-color: transparent;
 }
 
 #cntr_text {
-  line-height: 200px;
-  font-size: 30px;
+color: #DAA520;
+	font-size: 2rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	background-color: transparent;
+	border-color: transparent;
 }
 
+#btns,
+#footer,
+#notice,
 #dawn,
 #f_half_morning,
 #l_half_morning,
@@ -30,7 +50,20 @@ body {
 #l_half_daytime,
 #evening,
 #nighttime {
-  color: white;
-  background-color: transparent;
-  border-color: transparent;
+	color: #85754e;
+	bottom: 0;
+	width: 100%;
+	font-size: 15px;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+#copyRight {
+	color: #b8860b;
+	bottom: 0;
+	width: 100%;
+	font-size: 15px;
+	text-align: center;
+	background-color: transparent;
+	border-color: transparent;
 }
