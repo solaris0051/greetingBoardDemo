@@ -1,8 +1,6 @@
 @charset "UTF-8";
 
 body {
-	min-height: 100vh;
-	color: white;
 	text-align: center;
 	font-family: "Courgette", cursive;
 	margin: 0;
@@ -12,12 +10,8 @@ body {
 	background-repeat: no-repeat;
 }
 
-main {
-	flex-shrink: 1;
-}
-
 #greeting_words {
-	color: #DAA520;
+	color: #FDF5E6;
 	font-size: 3rem;
 	position: absolute;
 	top: 45%;
@@ -29,7 +23,7 @@ main {
 }
 
 #cntr_text {
-color: #DAA520;
+	color: #FDF5E6;
 	font-size: 2rem;
 	position: absolute;
 	top: 50%;
@@ -40,9 +34,28 @@ color: #DAA520;
 	border-color: transparent;
 }
 
+.container {
+	position: relative;
+	min-height: 100vh;
+}
+
+.wrap {
+	display: flex;
+	justify-content: center;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	color: white;
+	width: 100%;
+	font-size: 15px;
+	justify-content: center;
+	background-color: transparent;
+	border-color: transparent;
+}
+
 #btns,
-#footer,
-#notice,
 #dawn,
 #f_half_morning,
 #l_half_morning,
@@ -50,20 +63,21 @@ color: #DAA520;
 #l_half_daytime,
 #evening,
 #nighttime {
-	color: #85754e;
-	bottom: 0;
+	color: white;
 	width: 100%;
 	font-size: 15px;
+	display: flex;
+	justify-content: center;
 	background-color: transparent;
 	border-color: transparent;
 }
 
 #copyRight {
 	color: #b8860b;
-	bottom: 0;
 	width: 100%;
 	font-size: 15px;
-	text-align: center;
+	display: flex;
+	justify-content: center;
 	background-color: transparent;
 	border-color: transparent;
 }
