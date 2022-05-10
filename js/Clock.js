@@ -1,4 +1,5 @@
 onmessage = function(event) {
+	console.log(w_test1);
 	let param = event.data;
 	if (param == `request`) {
 		let numTimer = setTimeout(function perMinute() {

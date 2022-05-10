@@ -12,17 +12,18 @@ const nighttime = new Date().setHours(22, 0, 0); //nighttime.
 //getting current time.
 const ct = new Date().getHours();
 
-// //a1.yielding a worker named TimeSeeker whose child is named Clock.js.
-// const workerYielder = () => {
-// 	if (window.Worker) {
-// 		const TimeSeeker = new Worker('./Clock.js');
-// 	} else {
-// 		document.getElementById('no_worker').removeAttribute('hidden');
-// 		document.getElementById('no_worker').textContent = `I'm afraid to say no worker is embedded in this browser, meaning human intervention is required.`
-// 	}
-// }
-//
-// //a2.mainTimeKeeper that's applied recursive setTimeout to.
+//add1.yielding a worker named TimeSeeker whose child is named Clock.js.
+const workerYielder = () => {
+	if (window.Worker) {
+		console.log(m_test1);
+		const TimeSeeker = new Worker('./Clock.js');
+	} else {
+		document.getElementById('no_worker').removeAttribute('hidden');
+		document.getElementById('no_worker').textContent = `I'm afraid to say no worker is embedded in this browser, meaning human intervention is required.`
+	}
+}
+
+// //add2.mainTimeKeeper that's applied recursive setTimeout to.
 // const mainTimeKeeper = setTimeout(function director() {
 // 		postMessage(`request`);
 // 		onmessage = function(event) {
