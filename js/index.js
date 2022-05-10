@@ -1,75 +1,69 @@
-// sets the starting time to change expression for each slot.
-const dawn = new Date();
-dawn.setHours(4, 30, 0, 0);
-const f_half_morning = new Date(); //f_half_ represents the first half.
-f_half_morning.setHours(6, 0, 0, 0);
-const l_half_morning = new Date(); //l_half_ represents the last half.
-l_half_morning.setHours(9, 0, 0, 0);
-const f_half_daytime = new Date(); //f_half_ represents the first half.
-f_half_daytime.setHours(12, 0, 0, 0);
-const l_half_daytime = new Date(); //l_half_ represents the last half.
-l_half_daytime.setHours(15, 0, 0, 0);
-const evening = new Date();
-evening.setHours(18, 0, 0, 0);
-const nighttime = new Date();
-nighttime.setHours(22, 0, 0, 0);
+//for defining the starting time to change expression of a screen for each time slot.
+const dawn = new Date().setHours(4, 30, 0); //dwan
+const f_half_morning = new Date().setHours(6, 0, 0); //f_half_ represents the first half.
+const l_half_morning = new Date().setHours(9, 0, 0); //l_half_ represents the last half.
+const f_half_daytime = new Date().setHours(12, 0, 0); //f_half_ represents the first half.
+const l_half_daytime = new Date().setHours(15, 0, 0); //l_half_ represents the last half.
+const evening = new Date().setHours(18, 0, 0); //evening
+const nighttime = new Date().setHours(22, 0, 0, 0);
+
+//a normal sequence shows up below.
 const ct = new Date(); //ct: current time
 ct.getHours();
 
-//a normal sequence shows up below.
+// // schduler
+//
+// let numTimer = setTimeout(function perMinute() {
+//
+// 	numTimer = setTimeout(perMinute, 1000)
+// }, 1000);
+// }
+//
+//
+// let mainTimeCheker = setTimeout(function perMInute() {
+// 	//write stuff
+// postMessage([hour, min, sec]);
+// function (){
+// 	const TimeKeeper = (hh, mm, ss) => {
+// 		if (window.Worker) {
+// 			const TimeSeeker = new Worker('./Clock.js');
+// 			TimeSeeker.postMessage([hh, mm, ss]);
+// 			TimeSeeker.onmessage = function(event) {
+// 				scrennChanger(event.data);
+// 			}
+// 	}
+// }
+
+
+//for letting the backgroundImages and the greeting words shown up for each time slot, accordingly.
 const writeText = document.getElementById("greeting_words");
-const changeText = function() {
+const screenChanger = function() {
 	if (ct >= dawn && ct < f_half_morning) {
 		writeText.textContent = "Morning, dawn changes everything.";
-	} else {
-		if (ct >= f_half_morning && ct < l_half_morning) {
-			writeText.textContent = "Good morning.";
-		} else {
-			if (ct >= l_half_morning && ct < f_half_daytime) {
-				writeText.textContent = "Wish you a good day.";
-			} else {
-				if (ct >= f_half_daytime && ct < f_half_daytime) {
-					writeText.textContent = "Good afternoon.";
-				} else {
-					if (ct >= f_half_daytime && ct < l_half_daytime) {
-						writeText.textContent = "Wish you a blissful afternoon.";
-					} else {
-						if (ct >= evening && ct < nighttime) {
-							writeText.textContent = "Good evening.";
-						} else {
-							writeText.textContent = "Wish you a relaxing time.";
-						}
-					}
-				}
-			}
-		}
-	}
-};
-
-const changeBackgroundImage = function() {
-	if (ct >= dawn && ct < f_half_morning) {
 		document.body.style.backgroundImage = "url('./img/dawn.webp')";
 	} else {
 		if (ct >= f_half_morning && ct < l_half_morning) {
+			writeText.textContent = "Good morning.";
 			document.body.style.backgroundImage = "url('./img/f_half_morning.webp')";
 		} else {
 			if (ct >= l_half_morning && ct < f_half_daytime) {
-				document.body.style.backgroundImage =
-					"url('./img/l_half_morning.webp')";
+				writeText.textContent = "Wish you a good day.";
+				document.body.style.backgroundImage = "url('./img/l_half_morning.webp')";
 			} else {
 				if (ct >= f_half_daytime && ct < l_half_daytime) {
-					document.body.style.backgroundImage =
-						"url('./img/f_half_daytime.webp')";
+					writeText.textContent = "Good afternoon.";
+					document.body.style.backgroundImage = "url('./img/f_half_daytime.webp')";
 				} else {
 					if (ct >= l_half_daytime && ct < evening) {
-						document.body.style.backgroundImage =
-							"url('./img/l_half_daytime.webp')";
+						writeText.textContent = "Wish you a blissful afternoon.";
+						document.body.style.backgroundImage = "url('./img/l_half_daytime.webp')";
 					} else {
 						if (ct >= evening && ct < nighttime) {
+							writeText.textContent = "Good evening.";
 							document.body.style.backgroundImage = "url('./img/evening.webp')";
 						} else {
-							document.body.style.backgroundImage =
-								"url('./img/nighttime.webp')";
+							writeText.textContent = "Wish you a relaxing time.";
+							document.body.style.backgroundImage = "url('./img/nighttime.webp')";
 						}
 					}
 				}
@@ -97,34 +91,34 @@ const btn5 = document.querySelector("#l_half_daytime");
 const btn6 = document.querySelector("#evening");
 const btn7 = document.querySelector("#nighttime");
 btn1.addEventListener("click", () => {
-	document.body.style.backgroundImage = "url('./img/dawn.webp')";
 	writeText.textContent = "Morning, dawn changes everything.";
+	document.body.style.backgroundImage = "url('./img/dawn.webp')";
 });
 btn2.addEventListener("click", () => {
-	document.body.style.backgroundImage = "url('./img/f_half_morning.webp')";
 	writeText.textContent = "Good morning.";
+	document.body.style.backgroundImage = "url('./img/f_half_morning.webp')";
 });
 btn3.addEventListener("click", () => {
-	document.body.style.backgroundImage = "url('./img/l_half_morning.webp')";
 	writeText.textContent = "Wish you a good day.";
+	document.body.style.backgroundImage = "url('./img/l_half_morning.webp')";
 });
 btn4.addEventListener("click", () => {
-	document.body.style.backgroundImage = "url('./img/f_half_daytime.webp')";
 	writeText.textContent = "Good afternoon.";
+	document.body.style.backgroundImage = "url('./img/f_half_daytime.webp')";
 });
 btn5.addEventListener("click", () => {
-	document.body.style.backgroundImage = "url('./img/l_half_daytime.webp')";
 	writeText.textContent = "Wish you a blissful afternoon.";
+	document.body.style.backgroundImage = "url('./img/l_half_daytime.webp')";
 });
 btn6.addEventListener("click", () => {
-	document.body.style.backgroundImage = "url('./img/evening.webp')";
 	writeText.textContent = "Good evening.";
+	document.body.style.backgroundImage = "url('./img/evening.webp')";
 });
 btn7.addEventListener("click", () => {
-	document.body.style.backgroundImage = "url('./img/nighttime.webp')";
 	writeText.textContent = "Wish you a relaxing time.";
+	document.body.style.backgroundImage = "url('./img/nighttime.webp')";
 });
 
-changeText();
-changeBackgroundImage();
+// schduler();
+screenChanger();
 counter();

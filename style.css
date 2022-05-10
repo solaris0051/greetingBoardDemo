@@ -8,10 +8,15 @@ body {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	-webkit-transition: background 3s ease-in-out;
+	-moz-transition: background 3s ease-in-out;
+	-ms-transition: background 3s ease-in-out;
+	-o-transition: background 3s ease-in-out;
+	transition: background 3s ease-in-out;
 }
 
 #greeting_words {
-	color: #FDF5E6;
+	color: #FFEFD5;
 	font-size: 3rem;
 	position: absolute;
 	top: 30%;
@@ -20,6 +25,7 @@ body {
 	transform: translate(-50%, -50%);
 	background-color: transparent;
 	border-color: transparent;
+	text-shadow: #fff 0 0 5px;
 }
 
 #cntr_text {
