@@ -12,6 +12,8 @@ const nighttime = new Date().setHours(22, 0, 0); //nighttime.
 //getting current time.
 const ct = new Date().getHours();
 
+//todo: let node attached via nvm add instead of atom-live-server-plus
+
 //add1.yielding a worker named TimeSeeker whose child is named Clock.js.
 const workerYielder = () => {
 	if (window.Worker) {
