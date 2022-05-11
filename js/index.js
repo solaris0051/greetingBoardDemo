@@ -7,35 +7,40 @@ const l_half_daytime = new Date().setHours(15, 0, 0); //l_half_ represents the l
 const evening = new Date().setHours(18, 0, 0); //evening.
 const nighttime = new Date().setHours(22, 0, 0); //nighttime.
 
-//a normal sequence shows up below.
-
-//getting current time.
-const ct = new Date().getHours();
 
 //todo: let node attached via nvm add instead of atom-live-server-plus
 
-//add1.yielding a worker named TimeSeeker whose child is named Clock.js.
+//a normal sequence shows up below.
+
+//add_1. yielding a worker named TimeSeeker whose child is named Clock.js.
 const workerYielder = () => {
 	if (window.Worker) {
-		console.log(m_test1);
+		console.log(`WY_test0`);
 		const TimeSeeker = new Worker('./Clock.js');
+		console.log(`WY_test1`);
+
 	} else {
 		document.getElementById('no_worker').removeAttribute('hidden');
 		document.getElementById('no_worker').textContent = `I'm afraid to say no worker is embedded in this browser, meaning human intervention is required.`
 	}
-}
+};
 
-// //add2.mainTimeKeeper that's applied recursive setTimeout to.
-// const mainTimeKeeper = setTimeout(function director() {
-// 		postMessage(`request`);
-// 		onmessage = function(event) {
-// 			mainTimeKeeper = setTimeout(director, 1000)
-// 		}, 1000);
-// }
+//add_2. mainTimeKeeper that's applied recursive setTimeout to.
+let mainTimeKeeper = setTimeout(function director() {
+	console.log(`MTK_test0`);
+	postMessage(`request`);
+	console.log(`MTK_test1`);
+	onmessage = function(event) {
+		mainTimeKeeper = setTimeout(director, 1000);
+	};
+	console.log(`MTK_test2`);
+}, 1000);
 
 //letting the backgroundImages and the greeting words shown up for each time slot, accordingly.
+const ct = new Date();
+ct.getHours();
 const writeText = document.getElementById("greeting_words");
-const screenChanger = function(ct) {
+const screenChanger = function() {
 	if (ct >= dawn && ct < f_half_morning) {
 		writeText.textContent = "Morning, dawn changes everything.";
 		document.body.style.backgroundImage = "url('./img/dawn.webp')";
@@ -124,6 +129,6 @@ btn7.addEventListener("click", () => {
 	counter();
 });
 
-// scheduler();
+workerYielder();
 screenChanger();
 counter();
