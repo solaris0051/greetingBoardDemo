@@ -16,10 +16,9 @@ const nighttime = new Date().setHours(22, 0, 0); //nighttime.
 const workerYielder = () => {
 	if (window.Worker) {
 		console.log(`WY_test0`);
-		// const TimeSeeker = new Worker('./Clock.js');
+		//const TimeSeeker = new Worker('.//Clock.js');
 		const TimeSeeker = new Worker('./js/Clock.js');
 		console.log(`WY_test1`);
-
 	} else {
 		document.getElementById('no_worker').removeAttribute('hidden');
 		document.getElementById('no_worker').textContent = `I'm afraid to say no worker is embedded in this browser, meaning human intervention is required.`
