@@ -8,63 +8,79 @@ const evening = new Date().setHours(18, 0, 0); //evening.
 const nighttime = new Date().setHours(22, 0, 0); //nighttime.
 
 
-//todo: let node attached via nvm add instead of atom-live-server-plus
+//low priori todo: let node attached via nvm add instead of atom-live-server-plus
 
 //a normal sequence shows up below.
 
 //add_1. yielding a worker named TimeSeeker whose child is named Clock.js.
-const workerYielder = () => {
+function workerYielder() {
 	if (window.Worker) {
 		console.log(`WY_test0`);
-		//const TimeSeeker = new Worker('.//Clock.js');
 		const TimeSeeker = new Worker('./js/Clock.js');
 		console.log(`WY_test1`);
+		Timekeeper();
+		console.log(Timekeeper());
+		console.log(`WY_test2`);
 	} else {
 		document.getElementById('no_worker').removeAttribute('hidden');
-		document.getElementById('no_worker').textContent = `I'm afraid to say no worker is embedded in this browser, meaning human intervention is required.`
+		document.getElementById('no_worker').textContent = `I'm afraid to say no worker is embedded in this browser.`
 	}
 };
 
 //add_2. mainTimeKeeper that's applied recursive setTimeout to.
-let mainTimeKeeper = setTimeout(function director() {
-	console.log(`MTK_test0`);
-	postMessage(`request`);
-	console.log(`MTK_test1`);
-	onmessage = function(event) {
-		mainTimeKeeper = setTimeout(director, 1000);
-	};
-	console.log(`MTK_test2`);
-}, 1000);
+function Timekeeper() {
+	let mainTimeKeeper = setTimeout(function director() {
+		console.log(`MTK_test0`);
+		screenChanger();
+		console.log(`MTK_test1`);
+		postMessage(`request`);
+		console.log(postMessage(`request`));
+		console.log(`MTK_test2`);
+		onmessage = function(event) {
+			mainTimeKeeper = setTimeout(director, 15000);
+			console.log(`MTK_test3`);
+		};
+		console.log(`MTK_test4`);
+	}, 15000);
+};
 
 //letting the backgroundImages and the greeting words shown up for each time slot, accordingly.
 const ct = new Date();
 ct.getHours();
 const writeText = document.getElementById("greeting_words");
 const screenChanger = function() {
+	console.log(`SC_test0`);
 	if (ct >= dawn && ct < f_half_morning) {
+		console.log(`SC_test1`);
 		writeText.textContent = "Morning, dawn changes everything.";
 		document.body.style.backgroundImage = "url('./img/dawn.webp')";
 	} else {
 		if (ct >= f_half_morning && ct < l_half_morning) {
+			console.log(`SC_test2`);
 			writeText.textContent = "Good morning.";
 			document.body.style.backgroundImage = "url('./img/f_half_morning.webp')";
 		} else {
 			if (ct >= l_half_morning && ct < f_half_daytime) {
+				console.log(`SC_test3`);
 				writeText.textContent = "Wish you a good day.";
 				document.body.style.backgroundImage = "url('./img/l_half_morning.webp')";
 			} else {
 				if (ct >= f_half_daytime && ct < l_half_daytime) {
+					console.log(`SC_test4`);
 					writeText.textContent = "Good afternoon.";
 					document.body.style.backgroundImage = "url('./img/f_half_daytime.webp')";
 				} else {
 					if (ct >= l_half_daytime && ct < evening) {
+						console.log(`SC_test5`);
 						writeText.textContent = "Wish you a blissful afternoon.";
 						document.body.style.backgroundImage = "url('./img/l_half_daytime.webp')";
 					} else {
 						if (ct >= evening && ct < nighttime) {
+							console.log(`SC_test6`);
 							writeText.textContent = "Good evening.";
 							document.body.style.backgroundImage = "url('./img/evening.webp')";
 						} else {
+							console.log(`SC_test7`);
 							writeText.textContent = "Wish you a relaxing time.";
 							document.body.style.backgroundImage = "url('./img/nighttime.webp')";
 						}
@@ -130,5 +146,4 @@ btn7.addEventListener("click", () => {
 });
 
 workerYielder();
-screenChanger();
 counter();
