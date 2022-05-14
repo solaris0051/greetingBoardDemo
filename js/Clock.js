@@ -1,10 +1,5 @@
 onmessage = function(event) {
-	console.log(w_test0);
-	let param = event.data;
-	console.log(w_test1);
-	console.log(param);
-	if (param == `request`) {
-		console.log(w_test2);
+	if (event.data == 1) {
 		let numTimer = setTimeout(function perSecond() {
 			let w_ct = new Date();
 			let hour = Math.floor((w_ct % (60 * 60 * 60 * 1000)) / (60 * 60 * 1000));

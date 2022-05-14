@@ -1,3 +1,5 @@
+//low priori todo: let node attached via nvm add instead of atom-live-server-plus.
+
 //defining the starting time to change expression of a screen for each time slot.
 const dawn = new Date().setHours(4, 30, 0); //dawn.
 const f_half_morning = new Date().setHours(6, 0, 0); //f_half_ represents the first half.
@@ -7,47 +9,44 @@ const l_half_daytime = new Date().setHours(15, 0, 0); //l_half_ represents the l
 const evening = new Date().setHours(18, 0, 0); //evening.
 const nighttime = new Date().setHours(22, 0, 0); //nighttime.
 
-
-//low priori todo: let node attached via nvm add instead of atom-live-server-plus
-
 //a normal sequence shows up below.
-
 //add_1. yielding a worker named TimeSeeker whose child is named Clock.js.
-function workerYielder() {
-	if (window.Worker) {
-		console.log(`WY_test0`);
-		const TimeSeeker = new Worker('./js/Clock.js');
-		console.log(`WY_test1`);
-		Timekeeper();
-		console.log(Timekeeper());
-		console.log(`WY_test2`);
-	} else {
-		document.getElementById('no_worker').removeAttribute('hidden');
-		document.getElementById('no_worker').textContent = `I'm afraid to say no worker is embedded in this browser.`
-	}
-};
-
-//add_2. mainTimeKeeper that's applied recursive setTimeout to.
-function Timekeeper() {
+if (window.Worker) {
+	const TimeSeeker = new Worker('./js/Clock.js');
 	let mainTimeKeeper = setTimeout(function director() {
-		console.log(`MTK_test0`);
-		screenChanger();
-		console.log(`MTK_test1`);
-		postMessage(`request`);
-		console.log(postMessage(`request`));
-		console.log(`MTK_test2`);
-		onmessage = function(event) {
+		TimeSeeker.postMessage(1);
+		TimeSeeker.onmessage = function(event) {
+			screenChanger();
 			mainTimeKeeper = setTimeout(director, 15000);
-			console.log(`MTK_test3`);
 		};
-		console.log(`MTK_test4`);
 	}, 15000);
-};
+} else {
+	document.getElementById('no_worker').removeAttribute('hidden');
+	document.getElementById('no_worker').textContent = `no worker.`
+}
+
+// //add_2. mainTimeKeeper that's applied recursive setTimeout to.
+// function Timekeeper() {
+// 	let mainTimeKeeper = setTimeout(function director() {
+// 		console.log(`MTK_test0`);
+// 		screenChanger();
+// 		console.log(`MTK_test1`);
+// 		mainTimeKeeper.postMessage(request);
+// 		console.log(postMessage(request));
+// 		console.log(`MTK_test2`);
+// 		onmessage = function(event) {
+// 			mainTimeKeeper = setTimeout(director, 15000);
+// 			console.log(`MTK_test3`);
+// 		};
+// 		console.log(`MTK_test4`);
+// 	}, 15000);
+// };
 
 //letting the backgroundImages and the greeting words shown up for each time slot, accordingly.
 const ct = new Date();
 ct.getHours();
 const writeText = document.getElementById("greeting_words");
+
 const screenChanger = function() {
 	console.log(`SC_test0`);
 	if (ct >= dawn && ct < f_half_morning) {
@@ -144,6 +143,3 @@ btn7.addEventListener("click", () => {
 	document.body.style.backgroundImage = "url('./img/nighttime.webp')";
 	counter();
 });
-
-workerYielder();
-counter();
