@@ -11,6 +11,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="./style.css" type="text/css" />
+	<link rel="modulepreload" href="./js/Clock.js">
+	<script type="module" src="./js/index.js"></script>
 </head>
 
 <body>
@@ -20,16 +22,16 @@
 			<p id="cntr_text"></p>
 			<p hidden id="no_worker"></p>
 		</main>
+	</div>
+	<div class="wrap">
 		<footer>
 			<div>
 				<p>
-					You can click the below if you'd like to check the every background
-					image and greeting words,<br />
-					without having to wait for it at real time. Will you please reload
-					the screen after checking?
+					You can click the below if you'd like to check the every background<br>
+					image and greeting words, without having to wait for it at real time.
 				</p>
 			</div>
-			<div class="wrap">
+			<div>
 				<button type="button" id="dawn">
 					dawn(4:30 to 6:00)
 				</button>
@@ -57,7 +59,6 @@
 			</div>
 		</footer>
 	</div>
-	<script src="./js/index.js" async></script>
 </body>
 
 </html>

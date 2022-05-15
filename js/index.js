@@ -1,145 +1,156 @@
-//low priori todo: let node attached via nvm add instead of atom-live-server-plus.
-
 //defining the starting time to change expression of a screen for each time slot.
-const dawn = new Date().setHours(4, 30, 0); //dawn.
-const f_half_morning = new Date().setHours(6, 0, 0); //f_half_ represents the first half.
-const l_half_morning = new Date().setHours(9, 0, 0); //l_half_ represents the last half.
-const f_half_daytime = new Date().setHours(12, 0, 0); //f_half_ represents the first half.
-const l_half_daytime = new Date().setHours(15, 0, 0); //l_half_ represents the last half.
-const evening = new Date().setHours(18, 0, 0); //evening.
-const nighttime = new Date().setHours(22, 0, 0); //nighttime.
+const dawn = new Date();
+dawn.setHours(4, 30, 0); //dawn.
+const f_half_morning = new Date();
+f_half_morning.setHours(6, 0, 0); //f_half_ represents the first half.
+const l_half_morning = new Date();
+l_half_morning.setHours(9, 0, 0); //l_half_ represents the last half.
+const f_half_daytime = new Date();
+f_half_daytime.setHours(12, 0, 0); //f_half_ represents the first half.
+const l_half_daytime = new Date();
+l_half_daytime.setHours(15, 0, 0); //l_half_ represents the last half.
+const evening = new Date();
+evening.setHours(18, 0, 0); //evening.
+const nighttime = new Date();
+nighttime.setHours(22, 0, 0); //nighttime.
+
+//constants
+const txt_01 = `Morning, dawn changes everything.`;
+const txt_02 = `Good morning.`;
+const txt_03 = `Wish you a good day.`;
+const txt_04 = `Good afternoon.`;
+const txt_05 = `Wish you a blissful afternoon.`;
+const txt_06 = `Good evening.`;
+const txt_07 = `Wish you a relaxing time.`;
+const url_01 = "url('./img/dawn.webp')";
+const url_02 = "url('./img/f_half_morning.webp')";
+const url_03 = "url('./img/l_half_morning.webp')";
+const url_04 = "url('./img/f_half_daytime.webp')";
+const url_05 = "url('./img/l_half_daytime.webp')";
+const url_06 = "url('./img/evening.webp')";
+const url_07 = "url('./img/nighttime.webp')";
+const writeText = document.getElementById('greeting_words');
 
 //a normal sequence shows up below.
-//add_1. yielding a worker named TimeSeeker whose child is named Clock.js.
+//globally addded part: yielding a worker named Clock.js of which parent is named TimeSeeker.
 if (window.Worker) {
-	const TimeSeeker = new Worker('./js/Clock.js');
-	let mainTimeKeeper = setTimeout(function director() {
-		TimeSeeker.postMessage(1);
-		TimeSeeker.onmessage = function(event) {
-			screenChanger();
-			mainTimeKeeper = setTimeout(director, 15000);
-		};
-	}, 15000);
+	const TimeSeeker = new Worker('./js/Clock.js', {
+		type: 'module'
+	});
+	TimeSeeker.postMessage(true);
+	TimeSeeker.onmessage = function(event) {
+		let ct = event.data;
+		console.log(`viaMain: let ct =event.data; ${ct}`);
+		screenChanger(ct);
+		console.log(`viaMain: Passing screenChanger(ct)`);
+	};
 } else {
 	document.getElementById('no_worker').removeAttribute('hidden');
 	document.getElementById('no_worker').textContent = `no worker.`
 }
 
-// //add_2. mainTimeKeeper that's applied recursive setTimeout to.
-// function Timekeeper() {
-// 	let mainTimeKeeper = setTimeout(function director() {
-// 		console.log(`MTK_test0`);
-// 		screenChanger();
-// 		console.log(`MTK_test1`);
-// 		mainTimeKeeper.postMessage(request);
-// 		console.log(postMessage(request));
-// 		console.log(`MTK_test2`);
-// 		onmessage = function(event) {
-// 			mainTimeKeeper = setTimeout(director, 15000);
-// 			console.log(`MTK_test3`);
-// 		};
-// 		console.log(`MTK_test4`);
-// 	}, 15000);
-// };
-
-//letting the backgroundImages and the greeting words shown up for each time slot, accordingly.
-const ct = new Date();
-ct.getHours();
-const writeText = document.getElementById("greeting_words");
-
-const screenChanger = function() {
-	console.log(`SC_test0`);
+//getting the backgroundImages and the greeting words shown up for each time slot, accordingly.
+//to be hoisted in
+function screenChanger(ct) {
 	if (ct >= dawn && ct < f_half_morning) {
-		console.log(`SC_test1`);
-		writeText.textContent = "Morning, dawn changes everything.";
-		document.body.style.backgroundImage = "url('./img/dawn.webp')";
+		console.log(`dawn: ${ct}`);
+		writeText.textContent = txt_01;
+		document.body.style.backgroundImage = url_01;
 	} else {
 		if (ct >= f_half_morning && ct < l_half_morning) {
-			console.log(`SC_test2`);
-			writeText.textContent = "Good morning.";
-			document.body.style.backgroundImage = "url('./img/f_half_morning.webp')";
+			console.log(`f_half_morning: ${ct}`);
+			writeText.textContent = txt_02;
+			document.body.style.backgroundImage = url_02;
 		} else {
 			if (ct >= l_half_morning && ct < f_half_daytime) {
-				console.log(`SC_test3`);
-				writeText.textContent = "Wish you a good day.";
-				document.body.style.backgroundImage = "url('./img/l_half_morning.webp')";
+				console.log(`l_half_morning: ${ct}`);
+				writeText.textContent = txt_03;
+				document.body.style.backgroundImage = url_03;
 			} else {
 				if (ct >= f_half_daytime && ct < l_half_daytime) {
-					console.log(`SC_test4`);
-					writeText.textContent = "Good afternoon.";
-					document.body.style.backgroundImage = "url('./img/f_half_daytime.webp')";
+					console.log(`f_half_daytime: ${ct}`);
+					writeText.textContent = txt_04;
+					document.body.style.backgroundImage = url_04;
 				} else {
 					if (ct >= l_half_daytime && ct < evening) {
-						console.log(`SC_test5`);
-						writeText.textContent = "Wish you a blissful afternoon.";
-						document.body.style.backgroundImage = "url('./img/l_half_daytime.webp')";
+						console.log(`l_half_daytime: ${ct}`);
+						writeText.textContent = txt_05;
+						document.body.style.backgroundImage = url_05;
 					} else {
 						if (ct >= evening && ct < nighttime) {
-							console.log(`SC_test6`);
-							writeText.textContent = "Good evening.";
-							document.body.style.backgroundImage = "url('./img/evening.webp')";
+							console.log(`evening: ${ct}`);
+							writeText.textContent = txt_06;
+							document.body.style.backgroundImage = url_06;
 						} else {
-							console.log(`SC_test7`);
-							writeText.textContent = "Wish you a relaxing time.";
-							document.body.style.backgroundImage = "url('./img/nighttime.webp')";
+							console.log(`nighttime: ${ct}`);
+							writeText.textContent = txt_07;
+							document.body.style.backgroundImage = url_07;
 						}
 					}
 				}
 			}
 		}
 	}
-};
+}
 
-//storing visited times on this site in their own localStorage embedded in their own browsers.
+//storing their visiting times this site in their own localStorage embedded in their own browsers.
 const counter = function() {
 	if (!localStorage["times"]) {
 		localStorage["times"] = 0;
 	}
 	let cnt = localStorage["times"];
-	document.getElementById("cntr_text").innerHTML =
-		"Thank you for the " + ++localStorage["times"] + " times visiting.";
-};
+	document.getElementById('cntr_text').innerHTML =
+		`Thank you for the ${++localStorage["times"]} times visiting.`;
+}
+counter();
 
-//added following functions for those who can't wait for each actual time slot.
-const btn1 = document.querySelector("#dawn");
-const btn2 = document.querySelector("#f_half_morning");
-const btn3 = document.querySelector("#l_half_morning");
-const btn4 = document.querySelector("#f_half_daytime");
-const btn5 = document.querySelector("#l_half_daytime");
-const btn6 = document.querySelector("#evening");
-const btn7 = document.querySelector("#nighttime");
-btn1.addEventListener("click", () => {
-	writeText.textContent = "Morning, dawn changes everything.";
-	document.body.style.backgroundImage = "url('./img/dawn.webp')";
+////////////////////////////////////////////////////////////////////////////////
+//added following buttons for those who can't wait for each actual time slot.//
+//////////////////////////////////////////////////////////////////////////////
+const btn1 = document.getElementById('dawn');
+const btn2 = document.getElementById('f_half_morning');
+const btn3 = document.getElementById('l_half_morning');
+const btn4 = document.getElementById('f_half_daytime');
+const btn5 = document.getElementById('l_half_daytime');
+const btn6 = document.getElementById('evening');
+const btn7 = document.getElementById('nighttime');
+btn1.addEventListener('click', () => {
+	writeText.textContent = txt_01;
+	document.body.style.backgroundImage = url_01;
+	counter();
+})
+
+btn2.addEventListener('click', () => {
+	writeText.textContent = txt_02;
+	document.body.style.backgroundImage = url_02;
+	counter();
+})
+
+btn3.addEventListener('click', () => {
+	writeText.textContent = txt_03;
+	document.body.style.backgroundImage = url_03;
 	counter();
 });
-btn2.addEventListener("click", () => {
-	writeText.textContent = "Good morning.";
-	document.body.style.backgroundImage = "url('./img/f_half_morning.webp')";
+btn4.addEventListener('click', () => {
+	writeText.textContent = txt_04;
+	document.body.style.backgroundImage = url_04;
 	counter();
-});
-btn3.addEventListener("click", () => {
-	writeText.textContent = "Wish you a good day.";
-	document.body.style.backgroundImage = "url('./img/l_half_morning.webp')";
+})
+
+btn5.addEventListener('click', () => {
+	writeText.textContent = txt_05;
+	document.body.style.backgroundImage = url_05;
 	counter();
-});
-btn4.addEventListener("click", () => {
-	writeText.textContent = "Good afternoon.";
-	document.body.style.backgroundImage = "url('./img/f_half_daytime.webp')";
+})
+
+btn6.addEventListener('click', () => {
+	writeText.textContent = txt_06;
+	document.body.style.backgroundImage = url_06;
 	counter();
-});
-btn5.addEventListener("click", () => {
-	writeText.textContent = "Wish you a blissful afternoon.";
-	document.body.style.backgroundImage = "url('./img/l_half_daytime.webp')";
+})
+
+btn7.addEventListener('click', () => {
+	writeText.textContent = txt_07;
+	document.body.style.backgroundImage = url_07;
 	counter();
-});
-btn6.addEventListener("click", () => {
-	writeText.textContent = "Good evening.";
-	document.body.style.backgroundImage = "url('./img/evening.webp')";
-	counter();
-});
-btn7.addEventListener("click", () => {
-	writeText.textContent = "Wish you a relaxing time.";
-	document.body.style.backgroundImage = "url('./img/nighttime.webp')";
-	counter();
-});
+})

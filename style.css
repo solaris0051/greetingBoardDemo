@@ -8,11 +8,8 @@ body {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	-webkit-transition: background 3s ease-in-out;
-	-moz-transition: background 3s ease-in-out;
-	-ms-transition: background 3s ease-in-out;
-	-o-transition: background 3s ease-in-out;
-	transition: background 3s ease-in-out;
+  background 2s ease-in-out;
+	transition: background 2s ease-in-out;
 }
 
 #greeting_words {
@@ -47,6 +44,7 @@ body {
 
 .wrap {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 }
 
@@ -55,35 +53,22 @@ footer {
 	bottom: 0;
 	color: white;
 	width: 100%;
-	font-size: 15px;
+	font-size: 1rem;
 	justify-content: center;
 	background-color: transparent;
 	border-color: transparent;
 }
 
-#btns,
 #dawn,
 #f_half_morning,
 #l_half_morning,
 #f_half_daytime,
 #l_half_daytime,
 #evening,
-#nighttime {
-	color: white;
-	width: 100%;
-	font-size: 15px;
-	display: flex;
-	justify-content: center;
-	background-color: transparent;
-	border-color: transparent;
-}
-
+#nighttime,
 #copyRight {
-	color: #b8860b;
-	width: 100%;
-	font-size: 15px;
-	display: flex;
-	justify-content: center;
+	color: white;
+	font-size: 0.75rem;
 	background-color: transparent;
 	border-color: transparent;
 }
