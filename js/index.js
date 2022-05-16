@@ -32,17 +32,24 @@ const url_07 = "url('./img/nighttime.webp')";
 const writeText = document.getElementById('greeting_words');
 
 //a normal sequence shows up below.
-//globally addded part: yielding a worker named Clock.js of which parent is named TimeSeeker.
+
+//added to avoid a blank time of a screen until Clock.js starts.(in this case 15 secs.)
+const initial_t = new Date();
+initial_t.getHours;
+screenChanger(initial_t); //function hoisted.
+
+//addded part: yielding a worker named Clock.js, which sits outside of a main thread,
+//of which couterpart is named TimeSeeker that does inside of a main thread.
 if (window.Worker) {
 	const TimeSeeker = new Worker('./js/Clock.js', {
 		type: 'module'
 	});
 	TimeSeeker.postMessage(true);
 	TimeSeeker.onmessage = function(event) {
-		let ct = event.data;
-		console.log(`viaMain: let ct =event.data; ${ct}`);
-		screenChanger(ct);
-		console.log(`viaMain: Passing screenChanger(ct)`);
+		let cti = event.data;
+		console.log(`viaMain: let ct =event.data; ${cti}`);
+		screenChanger(cti); //function hoisted.
+		console.log(`viaMain: Passing screenChanger(cti)`);
 	};
 } else {
 	document.getElementById('no_worker').removeAttribute('hidden');
@@ -50,39 +57,38 @@ if (window.Worker) {
 }
 
 //getting the backgroundImages and the greeting words shown up for each time slot, accordingly.
-//to be hoisted in
-function screenChanger(ct) {
-	if (ct >= dawn && ct < f_half_morning) {
-		console.log(`dawn: ${ct}`);
+function screenChanger(t) {
+	if (t >= dawn && t < f_half_morning) {
+		console.log(`dawn: ${t}`);
 		writeText.textContent = txt_01;
 		document.body.style.backgroundImage = url_01;
 	} else {
-		if (ct >= f_half_morning && ct < l_half_morning) {
-			console.log(`f_half_morning: ${ct}`);
+		if (t >= f_half_morning && t < l_half_morning) {
+			console.log(`f_half_morning: ${t}`);
 			writeText.textContent = txt_02;
 			document.body.style.backgroundImage = url_02;
 		} else {
-			if (ct >= l_half_morning && ct < f_half_daytime) {
-				console.log(`l_half_morning: ${ct}`);
+			if (t >= l_half_morning && t < f_half_daytime) {
+				console.log(`l_half_morning: ${t}`);
 				writeText.textContent = txt_03;
 				document.body.style.backgroundImage = url_03;
 			} else {
-				if (ct >= f_half_daytime && ct < l_half_daytime) {
-					console.log(`f_half_daytime: ${ct}`);
+				if (t >= f_half_daytime && t < l_half_daytime) {
+					console.log(`f_half_daytime: ${t}`);
 					writeText.textContent = txt_04;
 					document.body.style.backgroundImage = url_04;
 				} else {
-					if (ct >= l_half_daytime && ct < evening) {
-						console.log(`l_half_daytime: ${ct}`);
+					if (t >= l_half_daytime && t < evening) {
+						console.log(`l_half_daytime: ${t}`);
 						writeText.textContent = txt_05;
 						document.body.style.backgroundImage = url_05;
 					} else {
-						if (ct >= evening && ct < nighttime) {
-							console.log(`evening: ${ct}`);
+						if (t >= evening && t < nighttime) {
+							console.log(`evening: ${t}`);
 							writeText.textContent = txt_06;
 							document.body.style.backgroundImage = url_06;
 						} else {
-							console.log(`nighttime: ${ct}`);
+							console.log(`nighttime: ${t}`);
 							writeText.textContent = txt_07;
 							document.body.style.backgroundImage = url_07;
 						}
