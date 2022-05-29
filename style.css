@@ -8,7 +8,6 @@ body {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-  background 2s ease-in-out;
 	transition: background 2s ease-in-out;
 }
 
