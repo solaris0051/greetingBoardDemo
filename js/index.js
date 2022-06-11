@@ -103,10 +103,10 @@ function screenChanger(t) {
 const counter = function() {
 	if (!localStorage["times"]) {
 		localStorage["times"] = 0;
-	}
-	let cnt = localStorage["times"];
+	} else {
 	document.getElementById('cntr_text').innerHTML =
 		`Thank you for the ${++localStorage["times"]} times visiting.`;
+	}
 }
 counter();
 
