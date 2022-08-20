@@ -44,12 +44,11 @@ if (window.Worker) {
 	const TimeSeeker = new Worker('./js/Clock.js', {
 		type: 'module'
 	});
-	TimeSeeker.postMessage(true);
+	TimeSeeker.postMessage(`move`);
 	TimeSeeker.onmessage = function(event) {
 		let cti = event.data;
 		console.log(`viaMain: let ct =event.data; ${cti}`);
 		screenChanger(cti); //function hoisted.
-		console.log(`viaMain: Passing screenChanger(cti)`);
 	};
 } else {
 	document.getElementById('no_worker').removeAttribute('hidden');

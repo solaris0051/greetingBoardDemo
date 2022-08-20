@@ -1,28 +1,57 @@
 @charset "UTF-8";
 
-body {
+html, body {
 	text-align: center;
 	font-family: "Courgette", cursive;
-	margin: 0;
+	box-sizing: border-box;
+	height: 100%;
 	padding: 0;
+	margin: 0;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	-webkit-transition: background 2s ease-in-out;
-	-moz-transition: background 2s ease-in-out;
-	-ms-transition: background 2s ease-in-out;
-	-o-transition: background 2s ease-in-out;
 	transition: background 2s ease-in-out;
+}
+
+.wrapper {
+	box-sizing: border-box;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+p,
+#dawn,
+#f_half_morning,
+#l_half_morning,
+#f_half_daytime,
+#l_half_daytime,
+#evening,
+#nighttime,
+#copyRight {
+	padding: 0;
+	margin: 0;
+	color: white;
+	font-size: 0.8rem;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+footer {
+	flex-grow: 0;
+	flex-shrink: 0;
 }
 
 #greeting_words {
 	color: #FFEFD5;
 	font-size: 2.75rem;
+	padding: 0;
+	margin: 0;
 	position: absolute;
 	top: 20%;
 	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
+	right: -50%;
+	transform: translate(-50%, 0%);
 	background-color: transparent;
 	border-color: transparent;
 	text-shadow: #fff 0 0 5px;
@@ -32,46 +61,16 @@ body {
 	color: #FDF5E6;
 	font-size: 1.75rem;
 	position: absolute;
-	top: 35%;
+	padding: 0;
+	margin: 0;
+	top: 50%;
 	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
+	right: -50%;
+	transform: translate(-50%, 0%);
 	background-color: transparent;
 	border-color: transparent;
 }
 
-.container {
-	position: relative;
-	min-height: 100vh;
-}
-
-.wrap {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-
-footer {
-	position: absolute;
-	bottom: 0;
-	color: white;
-	width: 100%;
-	font-size: 0.8rem;
-	justify-content: center;
-	background-color: transparent;
-	border-color: transparent;
-}
-
-#dawn,
-#f_half_morning,
-#l_half_morning,
-#f_half_daytime,
-#l_half_daytime,
-#evening,
-#nighttime,
-#copyRight {
-	color: white;
-	font-size: 0.75rem;
-	background-color: transparent;
-	border-color: transparent;
+main {
+	flex-grow: 1;
 }

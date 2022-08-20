@@ -1,10 +1,10 @@
 onmessage = function(event) {
-	if (event.data == true) {
-		let numTimer = setTimeout(function perQMin() {
+	if (event.data === `move`) {
+		let timerID0 = setTimeout(function fifteenseconds() {
 			let cto = new Date();
 			cto.getHours;
 			postMessage(cto);
-			numTimer = setTimeout(perQMin, 15 * 1000);
+			timerID0 = setTimeout(fifteenseconds, 15 * 1000);
 		}, 15 * 1000);
 	}
 }
