@@ -3,9 +3,7 @@
 html,
 body {
   text-align: center;
-	font-family: 'Niconne', cursive;
-	font-weight: 400;
-	font-size:1.5em;
+  font-family: "Niconne", cursive;
   box-sizing: border-box;
   height: 100%;
   padding: 0;
@@ -31,26 +29,30 @@ p,
 #l_half_daytime,
 #evening,
 #nighttime,
-#copyRight,
 #toggleBtn {
   padding: 0;
   margin: 0;
-  color: white;
-	font-family: 'Niconne', cursive;
-	font-weight: 100;
-  font-size: 0.7em;
+  color: #f0f0f5;
   background-color: transparent;
   border-color: transparent;
 }
 
 footer {
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 55%;
+  color: #f0f0f5;
+  font-size: 1em;
+  background-color: transparent;
+  border-color: transparent;
   flex-grow: 0;
   flex-shrink: 0;
 }
 
 #greeting_words {
   color: #ffefd5;
-  font-size: 2.75rem;
+  font-size: 3.75em;
   padding: 0;
   margin: 0;
   position: absolute;
@@ -65,11 +67,11 @@ footer {
 
 #cntr_text {
   color: #fdf5e6;
-  font-size: 1.75rem;
+  font-size: 1.75em;
   position: absolute;
   padding: 0;
   margin: 0;
-  top: 50%;
+  top: 45%;
   left: 50%;
   right: -50%;
   transform: translate(-50%, 0%);

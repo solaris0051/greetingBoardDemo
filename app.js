@@ -104,8 +104,7 @@ const counter = function () {
   if (!localStorage["times"]) {
     localStorage["times"] = 0;
   }
-  let i = 0;
-  if (i == 0) {
+  if (localStorage["times"] == 0) {
     document.getElementById(
       "cntr_text"
     ).innerHTML = `Thank you for the ${++localStorage["times"]} time visit.`;
