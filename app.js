@@ -105,16 +105,16 @@ const counter = function () {
     localStorage["times"] = 0;
   }
   let i = 0;
-  if ((i = 0)) {
+  if (i == 0) {
     document.getElementById(
       "cntr_text"
-    ).innerHTML = `Thank you for the ${++localStorage["times"]} time visiting.`;
+    ).innerHTML = `Thank you for the ${++localStorage["times"]} time visit.`;
   } else {
     document.getElementById(
       "cntr_text"
     ).innerHTML = `Thank you for the ${++localStorage[
       "times"
-    ]} times visiting.`;
+    ]} times visits.`;
   }
 };
 
