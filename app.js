@@ -15,21 +15,26 @@ const nighttime = new Date();
 nighttime.setHours(22, 0, 0); //nighttime.
 
 //constants
-const txt_01 = `Morning, dawn changes everything.`;
-const txt_02 = `Good morning.`;
-const txt_03 = `Wish you a good day.`;
-const txt_04 = `Good afternoon.`;
-const txt_05 = `Wish you a blissful afternoon.`;
-const txt_06 = `Good evening.`;
-const txt_07 = `Wish you a relaxing time.`;
-const url_01 = "url('./img/dawn.webp')";
-const url_02 = "url('./img/f_half_morning.webp')";
-const url_03 = "url('./img/l_half_morning.webp')";
-const url_04 = "url('./img/f_half_daytime.webp')";
-const url_05 = "url('./img/l_half_daytime.webp')";
-const url_06 = "url('./img/evening.webp')";
-const url_07 = "url('./img/nighttime.webp')";
-const writeText = document.getElementById("greeting_words");
+const txt = [
+  `Morning, dawn changes everything.`,
+  `Good morning.`,
+  `Wish you a good day.`,
+  `Good afternoon.`,
+  `Wish you a blissful afternoon.`,
+  `Good evening.`,
+  `Wish you a relaxing time.`,
+];
+const url = [
+  "url('./img/dawn.webp')",
+  "url('./img/f_half_morning.webp')",
+  "url('./img/l_half_morning.webp')",
+  "url('./img/f_half_daytime.webp')",
+  "url('./img/l_half_daytime.webp')",
+  "url('./img/evening.webp')",
+  "url('./img/nighttime.webp')",
+];
+
+const writeText = [document.getElementById("greeting_words")];
 
 //a normal sequence shows up below.
 //avoid a blank time of a screen until Clock.js starts.(in this case 15 secs.)
@@ -60,37 +65,37 @@ if (window.Worker) {
 function screenChanger(t) {
   if (t >= dawn && t < f_half_morning) {
     console.log(`dawn: ${t}`);
-    writeText.textContent = txt_01;
-    document.body.style.backgroundImage = url_01;
+    writeText[0].textContent = txt[0];
+    document.body.style.backgroundImage = url[0];
   } else {
     if (t >= f_half_morning && t < l_half_morning) {
       console.log(`f_half_morning: ${t}`);
-      writeText.textContent = txt_02;
-      document.body.style.backgroundImage = url_02;
+      writeText[0].textContent = txt[1];
+      document.body.style.backgroundImage = url[1];
     } else {
       if (t >= l_half_morning && t < f_half_daytime) {
         console.log(`l_half_morning: ${t}`);
-        writeText.textContent = txt_03;
-        document.body.style.backgroundImage = url_03;
+        writeText[0].textContent = txt[2];
+        document.body.style.backgroundImage = url[2];
       } else {
         if (t >= f_half_daytime && t < l_half_daytime) {
           console.log(`f_half_daytime: ${t}`);
-          writeText.textContent = txt_04;
-          document.body.style.backgroundImage = url_04;
+          writeText[0].textContent = txt[3];
+          document.body.style.backgroundImage = url[3];
         } else {
           if (t >= l_half_daytime && t < evening) {
             console.log(`l_half_daytime: ${t}`);
-            writeText.textContent = txt_05;
-            document.body.style.backgroundImage = url_05;
+            writeText[0].textContent = txt[4];
+            document.body.style.backgroundImage = url[4];
           } else {
             if (t >= evening && t < nighttime) {
               console.log(`evening: ${t}`);
-              writeText.textContent = txt_06;
-              document.body.style.backgroundImage = url_06;
+              writeText[0].textContent = txt[5];
+              document.body.style.backgroundImage = url[5];
             } else {
               console.log(`nighttime: ${t}`);
-              writeText.textContent = txt_07;
-              document.body.style.backgroundImage = url_07;
+              writeText[0].textContent = txt[6];
+              document.body.style.backgroundImage = url[6];
             }
           }
         }
@@ -107,13 +112,11 @@ const counter = function () {
   if (localStorage["times"] == 0) {
     document.getElementById(
       "cntr_text"
-    ).innerHTML = `Thank you for the ${++localStorage["times"]} time visit.`;
+    ).innerHTML = `Thank you for the ${++localStorage["times"]} visit.`;
   } else {
     document.getElementById(
       "cntr_text"
-    ).innerHTML = `Thank you for the ${++localStorage[
-      "times"
-    ]} times visits.`;
+    ).innerHTML = `Thank you for the ${++localStorage["times"]} visits.`;
   }
 };
 
@@ -122,53 +125,23 @@ counter();
 ////////////////////////////////////////////////////////////////////////////////
 //added following buttons for those who can't wait for each actual time slot.//
 //////////////////////////////////////////////////////////////////////////////
-const btn1 = document.getElementById("dawn");
-const btn2 = document.getElementById("f_half_morning");
-const btn3 = document.getElementById("l_half_morning");
-const btn4 = document.getElementById("f_half_daytime");
-const btn5 = document.getElementById("l_half_daytime");
-const btn6 = document.getElementById("evening");
-const btn7 = document.getElementById("nighttime");
-btn1.addEventListener("click", () => {
-  writeText.textContent = txt_01;
-  document.body.style.backgroundImage = url_01;
-  counter();
-});
+const btn = [
+  document.getElementById("dawn"),
+  document.getElementById("f_half_morning"),
+  document.getElementById("l_half_morning"),
+  document.getElementById("f_half_daytime"),
+  document.getElementById("l_half_daytime"),
+  document.getElementById("evening"),
+  document.getElementById("nighttime"),
+];
 
-btn2.addEventListener("click", () => {
-  writeText.textContent = txt_02;
-  document.body.style.backgroundImage = url_02;
-  counter();
-});
-
-btn3.addEventListener("click", () => {
-  writeText.textContent = txt_03;
-  document.body.style.backgroundImage = url_03;
-  counter();
-});
-btn4.addEventListener("click", () => {
-  writeText.textContent = txt_04;
-  document.body.style.backgroundImage = url_04;
-  counter();
-});
-
-btn5.addEventListener("click", () => {
-  writeText.textContent = txt_05;
-  document.body.style.backgroundImage = url_05;
-  counter();
-});
-
-btn6.addEventListener("click", () => {
-  writeText.textContent = txt_06;
-  document.body.style.backgroundImage = url_06;
-  counter();
-});
-
-btn7.addEventListener("click", () => {
-  writeText.textContent = txt_07;
-  document.body.style.backgroundImage = url_07;
-  counter();
-});
+for (let i = 0; i < btn.length; i++) {
+  btn[i].addEventListener("click", () => {
+    writeText[0].textContent = txt[i];
+    document.body.style.backgroundImage = url[i];
+    counter();
+  });
+}
 
 // control fullscreen(enter/exit)
 const toggleBtn = document.getElementById("toggleBtn");
