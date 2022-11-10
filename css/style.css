@@ -27,6 +27,9 @@ body {
 
 main {
   flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #greeting_words {
@@ -36,9 +39,6 @@ main {
   font-size: 3.75rem;
   position: absolute;
   top: 20%;
-  left: 50%;
-  right: -50%;
-  transform: translate(-50%, 0%);
   background-color: transparent;
   border-color: transparent;
   text-shadow: #fff 0 0 5px;
@@ -51,9 +51,6 @@ main {
   font-size: 3rem;
   position: absolute;
   top: 45%;
-  left: 50%;
-  right: -50%;
-  transform: translate(-50%, 0%);
   background-color: transparent;
   border-color: transparent;
 }
