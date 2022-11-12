@@ -1,1 +1,0 @@
-(()=>{var __webpack_modules__={471:()=>{eval("\n\n//# sourceURL=webpack://greetingboard/./src/index.js?")}},__webpack_exports__={};__webpack_modules__[471]()})();
