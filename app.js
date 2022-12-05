@@ -49,11 +49,11 @@ if (window.Worker) {
     type: "module",
   });
   TimeSeeker.postMessage(`move`);
-  TimeSeeker.onmessage = function (event) {
+  TimeSeeker.addEventListener("message", (event) => {
     let cti = event.data;
-    console.log(`viaMain: let cti =event.data; ${cti}`);
-    screenChanger(cti); //function hoisted.
-  };
+    //function hoisted.
+    screenChanger(cti);
+  });
 } else {
   document.getElementById("no_worker").removeAttribute("hidden");
   document.getElementById(
@@ -64,36 +64,29 @@ if (window.Worker) {
 //getting the backgroundImages and the greeting words shown up for each time slot, accordingly.
 function screenChanger(t) {
   if (t >= dawn && t < f_half_morning) {
-    console.log(`dawn: ${t}`);
     writeText[0].textContent = txt[0];
     document.body.style.backgroundImage = url[0];
   } else {
     if (t >= f_half_morning && t < l_half_morning) {
-      console.log(`f_half_morning: ${t}`);
       writeText[0].textContent = txt[1];
       document.body.style.backgroundImage = url[1];
     } else {
       if (t >= l_half_morning && t < f_half_daytime) {
-        console.log(`l_half_morning: ${t}`);
         writeText[0].textContent = txt[2];
         document.body.style.backgroundImage = url[2];
       } else {
         if (t >= f_half_daytime && t < l_half_daytime) {
-          console.log(`f_half_daytime: ${t}`);
           writeText[0].textContent = txt[3];
           document.body.style.backgroundImage = url[3];
         } else {
           if (t >= l_half_daytime && t < evening) {
-            console.log(`l_half_daytime: ${t}`);
             writeText[0].textContent = txt[4];
             document.body.style.backgroundImage = url[4];
           } else {
             if (t >= evening && t < nighttime) {
-              console.log(`evening: ${t}`);
               writeText[0].textContent = txt[5];
               document.body.style.backgroundImage = url[5];
             } else {
-              console.log(`nighttime: ${t}`);
               writeText[0].textContent = txt[6];
               document.body.style.backgroundImage = url[6];
             }
@@ -122,7 +115,7 @@ const counter = function () {
 
 counter();
 
-////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 //added following buttons for those who can't wait for each actual time slot.//
 //////////////////////////////////////////////////////////////////////////////
 const btn = [
@@ -139,7 +132,6 @@ for (let i = 0; i < btn.length; i++) {
   btn[i].addEventListener("click", () => {
     writeText[0].textContent = txt[i];
     document.body.style.backgroundImage = url[i];
-    counter();
   });
 }
 
@@ -148,9 +140,13 @@ const toggleBtn = document.getElementById("toggleBtn");
 toggleBtn.addEventListener("click", () => {
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen();
+    document.getElementById("toggleIcon").className =
+      "fa-sharp fa-solid fa-minimize";
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();
+      document.getElementById("toggleIcon").className =
+        "fa-sharp fa-solid fa-maximize";
     }
   }
 });

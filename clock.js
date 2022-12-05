@@ -1,4 +1,4 @@
-onmessage = function (event) {
+addEventListener("message", (event) => {
   if (event.data === `move`) {
     setInterval(() => {
       let cto = new Date();
@@ -6,4 +6,4 @@ onmessage = function (event) {
       postMessage(cto);
     }, 15 * 1000);
   }
-};
+});
