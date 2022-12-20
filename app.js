@@ -15,16 +15,6 @@ const nighttime = new Date();
 nighttime.setHours(22, 0, 0); //nighttime.
 
 //constants
-// const txt = [
-//   `Morning, dawn changes everything.`,
-//   `Good morning.`,
-//   `Wish you a good day.`,
-//   `Good afternoon.`,
-//   `Wish you a blissful afternoon.`,
-//   `Good evening.`,
-//   `Wish you a relaxing time.`,
-// ];
-
 const txt = [
   `おはようございます。夜明けとともに何もかもが変わりそうです。`,
   `よい午前をおすごしください。`,
