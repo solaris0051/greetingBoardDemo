@@ -15,14 +15,24 @@ const nighttime = new Date();
 nighttime.setHours(22, 0, 0); //nighttime.
 
 //constants
+// const txt = [
+//   `Morning, dawn changes everything.`,
+//   `Good morning.`,
+//   `Wish you a good day.`,
+//   `Good afternoon.`,
+//   `Wish you a blissful afternoon.`,
+//   `Good evening.`,
+//   `Wish you a relaxing time.`,
+// ];
+
 const txt = [
-  `Morning, dawn changes everything.`,
-  `Good morning.`,
-  `Wish you a good day.`,
-  `Good afternoon.`,
-  `Wish you a blissful afternoon.`,
-  `Good evening.`,
-  `Wish you a relaxing time.`,
+  `おはようございます。夜明けとともに何もかもが変わりそうです。`,
+  `よい午前をおすごしください。`,
+  `よい一日でありますように。`,
+  `よい午後をお過ごしください。`,
+  `幸せな午後を過ごされますように。`,
+  `よい夕を過ごされますように。`,
+  `安らぎのときを過ごされますように。`,
 ];
 const url = [
   "url('./img/dawn.webp')",
@@ -103,13 +113,13 @@ const counter = function () {
     localStorage["times"] = 0;
   }
   if (localStorage["times"] == 0) {
-    document.getElementById(
-      "cntr_text"
-    ).innerHTML = `Thank you for the ${++localStorage["times"]} visit.`;
+    document.getElementById("cntr_text").innerHTML = `${++localStorage[
+      "times"
+    ]} 回目のご訪問ありがとうございます。`;
   } else {
-    document.getElementById(
-      "cntr_text"
-    ).innerHTML = `Thank you for the ${++localStorage["times"]} visits.`;
+    document.getElementById("cntr_text").innerHTML = `${++localStorage[
+      "times"
+    ]} 回目の訪問にお礼申し上げます。`;
   }
 };
 
