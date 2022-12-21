@@ -16,13 +16,13 @@ nighttime.setHours(22, 0, 0); //nighttime.
 
 //constants
 const txt = [
-  `おはようございます。夜明けとともに何もかもが変わりそうです。`,
-  `よい午前をおすごしください。`,
+  `おはようございます。夜明けがすべてを変えます。`,
+  `よい午前でありますよう。`,
   `よい一日でありますように。`,
-  `よい午後をお過ごしください。`,
-  `幸せな午後を過ごされますように。`,
-  `よい夕を過ごされますように。`,
-  `安らぎのときを過ごされますように。`,
+  `よい午後でありますよう。`,
+  `幸せな午後でありますように。`,
+  `よい夕でありますよう。`,
+  `安らぎとともにありますように。`,
 ];
 const url = [
   "url('./img/dawn.webp')",
@@ -58,7 +58,7 @@ if (window.Worker) {
   document.getElementById("no_worker").removeAttribute("hidden");
   document.getElementById(
     "no_worker"
-  ).textContent = `Could you please make web worker available?`;
+  ).textContent = `Web Web workerを有効にしてください。`;
 }
 
 //getting the backgroundImages and the greeting words shown up for each time slot, accordingly.
