@@ -12,7 +12,7 @@
 html,
 body {
   text-align: center;
-	font-family: 'Kaisei Opti', serif;
+  font-family: "Kaisei Opti", serif;
   box-sizing: border-box;
   height: 100%;
   padding: 0;
@@ -77,7 +77,7 @@ footer {
   padding: 0;
   margin: 0;
   color: #f0f0f5;
-	font-family: 'Niconne', cursive;
+  font-family: "Niconne", cursive;
   font-size: 1rem;
   line-height: 1.39rem;
   background-color: transparent;
