@@ -16,12 +16,12 @@ nighttime.setHours(22, 0, 0); //nighttime.
 
 //constants
 const txt = [
-  `おはようございます。黎明にすべてが変わります。`,
-  `よい午前でありますよう。`,
-  `よい一日でありますように。`,
-  `よい午後でありますよう。`,
-  `幸せな午後でありますように。`,
-  `よい夕でありますよう。`,
+  `おはようございます。黎明がすべてを変えます。`,
+  `いい朝をお過ごしください。`,
+  `今日がいい一日でありますように。`,
+  `いい午後をお過ごしください。`,
+  `至福の午後を過ごされますように。`,
+  `いい夕をお過ごしください。`,
   `安らぎとともにありますように。`,
 ];
 const url = [
@@ -58,7 +58,7 @@ if (window.Worker) {
   document.getElementById("no_worker").removeAttribute("hidden");
   document.getElementById(
     "no_worker"
-  ).textContent = `Web Web workerを有効にしてください。`;
+  ).textContent = `Web workerを有効にしてください。`;
 }
 
 //getting the backgroundImages and the greeting words shown up for each time slot, accordingly.
