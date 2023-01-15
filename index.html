@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self';script-src 'self';connect-src 'self';child-src 'self';font-src 'self';style-src 'self'; object-src 'none';"
-    />
-    <meta name="description" content="digital-signage-on-my-own-framework" />
-    <title>Greeting Board</title>
-    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
-    <link rel="stylesheet" href="./css/all.min.css" type="text/css" />
-    <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <link rel="modulepreload" href="clock.js" />
-    <script type="module" src="app.js"></script>
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <main>
-        <h1 id="greeting_words"></h1>
-        <p id="cntr_text"></p>
-        <p hidden id="no_worker"></p>
-      </main>
-      <footer>
-        <p id="option">
-          実際の時間帯をお待ちにならずに、各時間帯の背景画像と挨拶の言葉をご確認いただくには、画面下部にあります各時間帯の表示をクリックしてください。
-        </p>
-        <button type="button" id="dawn">dawn(4:30 to 6:00)</button>
-        <button type="button" id="f_half_morning">
-          the first half in the morning(6:00 to 9:00)
-        </button>
-        <button type="button" id="l_half_morning">
-          the latter half in the morning(9:00 to 12:00)
-        </button>
-        <button type="button" id="f_half_daytime">
-          the first half during the daytime(12:00 to 15:00)
-        </button>
-        <button type="button" id="l_half_daytime">
-          the latter half during the daytime(15:00 to 18:00)
-        </button>
-        <button type="button" id="evening">evening(18:00 to 22:00)</button>
-        <button type="button" id="nighttime">
-          nighttime(22:00 to the next day 4:30)
-        </button>
-        <button
-          type="button"
-          name="toggle-button-for-fullscreen"
-          id="toggleBtn"
-        >
-          <i class="fa-sharp fa-solid fa-maximize" id="toggleIcon"></i>
-        </button>
-        <p id="copyright">
-          This product is dedicated to Ms. Watt.<br />Since Dec, 2021 (C) Y.K
-        </p>
-      </footer>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';script-src 'self';connect-src 'self';child-src 'self';font-src 'self';style-src 'self'; object-src 'none';" />
+  <meta name="description" content="digital-signage-on-my-own-framework" />
+  <title>Greeting Board</title>
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+  <link rel="stylesheet" href="./css/all.min.css" type="text/css" />
+  <link rel="stylesheet" href="./css/style.css" type="text/css" />
+  <link rel="modulepreload" href="clock.js" />
+  <script type="module" src="app.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <main>
+      <h1 id="greeting_words"></h1>
+      <p id="cntr_text"></p>
+      <p hidden id="no_worker"></p>
+    </main>
+    <footer>
+      <p id="option">
+        実際の時間帯をお待ちにならずに、各時間帯の背景画像と挨拶の言葉をご確認いただくには、画面下部にあります各時間帯の表示をクリックしてください。
+      </p>
+      <button type="button" id="dawn">dawn(4:30 to 6:00)</button>
+      <button type="button" id="f_half_morning">
+        the first half in the morning(6:00 to 9:00)
+      </button>
+      <button type="button" id="l_half_morning">
+        the latter half in the morning(9:00 to 12:00)
+      </button>
+      <button type="button" id="f_half_daytime">
+        the first half during the daytime(12:00 to 15:00)
+      </button>
+      <button type="button" id="l_half_daytime">
+        the latter half during the daytime(15:00 to 18:00)
+      </button>
+      <button type="button" id="evening">evening(18:00 to 22:00)</button>
+      <button type="button" id="nighttime">
+        nighttime(22:00 to the next day 4:30)
+      </button>
+      <button type="button" name="toggle-button-for-fullscreen" id="toggleBtn">
+        <i class="fa-sharp fa-solid fa-maximize" id="toggleIcon"></i>
+      </button>
+      <p id="copyright">
+        This product is dedicated to Ms. Watt.<br />Since Dec, 2021 (C) Y.K
+      </p>
+    </footer>
+  </div>
+</body>
+
 </html>
