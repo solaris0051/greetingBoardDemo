@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self';script-src 'self';connect-src 'self';child-src 'self';font-src 'self';style-src 'self'; object-src 'none';" />
+    content="default-src 'self'; script-src 'self'; connect-src 'self'; child-src 'self'; font-src 'self'; style-src 'self'; object-src 'none'; frame-src 'self' https://rss.app/embed/v1/ticker/tNTcvlOMz4XkrNxm;" />
   <meta name="description" content="digital-signage-on-my-own-framework" />
   <title>Greeting Board</title>
   <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./css/style.css" type="text/css" />
   <link rel="modulepreload" href="clock.js" />
   <script type="module" src="app.js"></script>
+  <iframe width="1200" height="60" src="https://rss.app/embed/v1/ticker/tNTcvlOMz4XkrNxm" frameborder="0"></iframe>
 </head>
 
 <body>
