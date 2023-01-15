@@ -43,7 +43,7 @@ initial_t.getHours;
 screenChanger(initial_t); //function hoisted.
 
 //yielding a worker named Clock.js, which sits outside of a main thread,
-//of which couterpart is named TimeSeeker that does inside of a main thread.
+//of which counterpart is named TimeSeeker that does inside of a main thread.
 if (window.Worker) {
   const TimeSeeker = new Worker("./clock.js", {
     type: "module",
