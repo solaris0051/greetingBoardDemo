@@ -5,10 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self'; connect-src 'self'; child-src 'self'; font-src 'self'; style-src 'self'; object-src 'none'; frame-src 'self' https://rss.app/embed/v1/ticker/6DEPhWrX4SxGeFMd;" />
+    content="default-src 'self'; script-src 'self'; connect-src 'self'; child-src 'self'; font-src 'self'; style-src 'self'; object-src 'none'; frame-src 'self' https://rss.app/embed/v1/ticker/t4KPZXdUUnjAtKSE;" />
   <meta name="description" content="digital-signage-on-my-own-framework" />
   <title>Greeting Board</title>
   <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+  <link rel="preload" href="./font/KaiseiOpti-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./css/all.min.css" type="text/css" />
   <link rel="stylesheet" href="./css/style.css" type="text/css" />
   <link rel="modulepreload" href="clock.js" />
@@ -18,7 +19,7 @@
 <body>
   <div class="wrapper">
     <main>
-      <iframe width="100%" height="60" src="https://rss.app/embed/v1/ticker/6DEPhWrX4SxGeFMd" frameborder="0"></iframe>
+      <iframe width="100%" height="60" title="news" src="https://rss.app/embed/v1/ticker/t4KPZXdUUnjAtKSE" frameborder="0"></iframe>
       <h1 id="greeting_words"></h1>
       <p id="cntr_text"></p>
       <p hidden id="no_worker"></p>
@@ -44,8 +45,8 @@
       <button type="button" id="nighttime">
         nighttime(22:00 to the next day 4:30)
       </button>
-      <button type="button" name="toggle-button-for-fullscreen" id="toggleBtn">
-        <i class="fa-sharp fa-solid fa-maximize" id="toggleIcon"></i>
+      <button type="button" id="toggleBtn">
+        <i class="fa-sharp fa-solid fa-maximize" id="toggleIcon">TOGGLE</i>
       </button>
       <p id="copyright">
         This product is dedicated to Ms. Watt.<br />Since Dec, 2021 (C) Y.K
