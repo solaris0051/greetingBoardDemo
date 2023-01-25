@@ -61,6 +61,23 @@ if (window.Worker) {
   ).textContent = `Web workerを有効にしてください。`;
 }
 
+//yielding a worker named Time.js, which sits outside of a main thread,
+//of which counterpart is named TimeProcessor that does inside of a main thread.
+if (window.Worker) {
+  const TimeProcessor = new Worker("./time.js", {
+    type: "module",
+  });
+  TimeProcessor.postMessage(`request`);
+  TimeProcessor.addEventListener("message", (event) => {
+    document.getElementById("showing_time").textContent = event.data;
+  });
+} else {
+  document.getElementById("no_worker").removeAttribute("hidden");
+  document.getElementById(
+    "no_worker"
+  ).textContent = `Web workerを有効にしてください。`;
+}
+
 //getting the backgroundImages and the greeting words shown up for each time slot, accordingly.
 function screenChanger(t) {
   if (t >= dawn && t < f_half_morning) {
