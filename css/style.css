@@ -32,49 +32,35 @@ body {
 }
 
 main {
-  flex-grow: 0;
+  color: lightcyan;
   display: flex;
+  flex-grow: 0;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  border-color: transparent;
+  text-shadow: #fff 0 0 5px;
 }
 
 #greeting_words {
-  padding: 0;
-  margin: 0;
-  color: lightcyan;
   font-size: 3rem;
   line-height: 3rem;
   position: absolute;
   top: 20%;
-  background-color: transparent;
-  border-color: transparent;
-  text-shadow: #fff 0 0 5px;
 }
 
 #showing_time {
-  padding: 0;
-  margin: 0;
-  color: lightcyan;
   font-size: 3rem;
-  font-family: "Niconne", cursive;
   line-height: 3rem;
   position: absolute;
-  top: 30%;
-  background-color: transparent;
-  border-color: transparent;
-  text-shadow: #fff 0 0 5px;
+  top: 33%;
 }
 
 #cntr_text {
-  padding: 0;
-  margin: 0;
-  color: lightcyan;
   font-size: 1.5rem;
   line-height: 1.5rem;
   position: absolute;
-  top: 48.8%;
-  background-color: transparent;
-  border-color: transparent;
+  top: 48.5%;
 }
 
 footer {
@@ -85,17 +71,6 @@ footer {
   bottom: 0%;
   flex-grow: 0;
   flex-shrink: 0;
-}
-
-#copyright {
-  padding: 0;
-  margin: 0;
-  color: peachpuff;
-  font-family: "Niconne", cursive;
-  font-size: 1rem;
-  line-height: 1.39rem;
-  background-color: transparent;
-  border-color: transparent;
 }
 
 #option,
@@ -112,6 +87,17 @@ footer {
   color: lightcyan;
   font-size: 0.8rem;
   line-height: 0.8rem;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#copyright {
+  padding: 0;
+  margin: 0;
+  color: peachpuff;
+  font-family: "Niconne", cursive;
+  font-size: 1rem;
+  line-height: 1.39rem;
   background-color: transparent;
   border-color: transparent;
 }
