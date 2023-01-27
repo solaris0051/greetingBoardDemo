@@ -32,7 +32,7 @@ body {
 }
 
 main {
-  color: lightcyan;
+  color: #AFEEEE;
   display: flex;
   flex-grow: 0;
   justify-content: center;
@@ -43,22 +43,22 @@ main {
 }
 
 #greeting_words {
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 3em;
+  line-height: 3em;
   position: absolute;
   top: 20%;
 }
 
 #showing_time {
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 2em;
+  line-height: 2em;
   position: absolute;
-  top: 33%;
+  top: 35%;
 }
 
 #cntr_text {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  font-size: 1.5em;
+  line-height: 1.5em;
   position: absolute;
   top: 48.5%;
 }
@@ -85,8 +85,8 @@ footer {
   padding: 0;
   margin: 0;
   color: lightcyan;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
+  font-size: 0.8em;
+  line-height: 0.8em;
   background-color: transparent;
   border-color: transparent;
 }
@@ -96,8 +96,8 @@ footer {
   margin: 0;
   color: peachpuff;
   font-family: "Niconne", cursive;
-  font-size: 1rem;
-  line-height: 1.39rem;
+  font-size: 1em;
+  line-height: 1.39em;
   background-color: transparent;
   border-color: transparent;
 }
