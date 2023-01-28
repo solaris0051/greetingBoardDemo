@@ -25,48 +25,42 @@ body {
 }
 
 .wrapper {
-  box-sizing: border-box;
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-main {
-  color: #AFEEEE;
+.wrapper2 {
   display: flex;
-  flex-grow: 0;
   justify-content: center;
   align-items: center;
+  padding: 0;
+  margin: 0;
+  color: #AFEEEE;
   background-color: transparent;
   border-color: transparent;
   text-shadow: #fff 0 0 5px;
 }
 
 #greeting_words {
-  padding: 0;
-  margin: 0;
-  font-size: 2em;
-  line-height: 2em;
+  font-size: 2.25em;
+  line-height: 2.225em;
   position: absolute;
-  top: 15%;
+  top: 11%;
 }
 
 #showing_time {
-  padding: 0;
-  margin: 0;
   font-size: 2em;
   line-height: 2em;
   position: absolute;
-  top: 25%;
+  top: 22%;
 }
 
 #cntr_text {
-  padding: 0;
-  margin: 0;
-  font-size: 1.5em;
-  line-height: 1.5em;
+  font-size: 1.75em;
+  line-height: 1.75em;
   position: absolute;
-  top: 35%;
+  top: 33%;
 }
 
 footer {
@@ -75,8 +69,6 @@ footer {
   position: absolute;
   width: 100%;
   bottom: 0%;
-  flex-grow: 0;
-  flex-shrink: 0;
 }
 
 #option,
