@@ -44,21 +44,21 @@ body {
 
 #greeting_words {
   font-size: 2.25em;
-  line-height: 2.225em;
+  line-height: 100%;
   position: absolute;
   top: 11%;
 }
 
 #showing_time {
   font-size: 2em;
-  line-height: 2em;
+  line-height: 100%;
   position: absolute;
   top: 22%;
 }
 
 #cntr_text {
   font-size: 1.75em;
-  line-height: 1.75em;
+  line-height: 100%;
   position: absolute;
   top: 33%;
 }
@@ -84,7 +84,7 @@ footer {
   margin: 0;
   color: lightcyan;
   font-size: 0.8em;
-  line-height: 0.8em;
+  line-height: 100%;
   background-color: transparent;
   border-color: transparent;
 }
@@ -95,7 +95,7 @@ footer {
   color: peachpuff;
   font-family: "Niconne", cursive;
   font-size: 1em;
-  line-height: 1.39em;
+  line-height: 100%;
   background-color: transparent;
   border-color: transparent;
 }
