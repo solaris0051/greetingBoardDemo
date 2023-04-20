@@ -1,5 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const devMode = process.env.NODE_ENV !== "production";
 
@@ -63,10 +62,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "style.css",
     }),
-    new HtmlWebpackPlugin({
-      template: "src/index.html",
-      favicon: "src/favicon.ico",
-    })
   ],
   devtool: devMode ? "source-map" : "eval",
   watchOptions: {
