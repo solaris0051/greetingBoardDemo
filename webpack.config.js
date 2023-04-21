@@ -8,7 +8,7 @@ module.exports = {
   entry: "./src/index.js",
 
   output: {
-    filename: "bundle.js",
+    filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -66,6 +66,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      favicon: "./img/favicon.ico",
     }),
   ],
   devtool: devMode ? "source-map" : "eval",
