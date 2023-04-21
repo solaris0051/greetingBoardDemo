@@ -1,20 +1,17 @@
-//defining the starting time to change expression of a screen for each time slot.
 const dawn = new Date();
-dawn.setHours(4, 30, 0); //dawn.
+dawn.setHours(4, 30, 0);
 const f_half_morning = new Date();
-f_half_morning.setHours(6, 0, 0); //f_half_ represents the first half.
+f_half_morning.setHours(6, 0, 0);
 const l_half_morning = new Date();
-l_half_morning.setHours(9, 0, 0); //l_half_ represents the last half.
+l_half_morning.setHours(9, 0, 0);
 const f_half_daytime = new Date();
-f_half_daytime.setHours(12, 0, 0); //f_half_ represents the first half.
+f_half_daytime.setHours(12, 0, 0);
 const l_half_daytime = new Date();
-l_half_daytime.setHours(15, 0, 0); //l_half_ represents the last half.
+l_half_daytime.setHours(15, 0, 0);
 const evening = new Date();
-evening.setHours(18, 0, 0); //evening.
+evening.setHours(18, 0, 0);
 const nighttime = new Date();
-nighttime.setHours(22, 0, 0); //nighttime.
-
-//constants
+nighttime.setHours(22, 0, 0);
 const txt = [
   `夜明けはすべてを変えます。`,
   `素敵な朝をお過ごしください。`,
@@ -33,17 +30,10 @@ const url = [
   "url('./img/evening.webp')",
   "url('./img/nighttime.webp')",
 ];
-
 const writeText = [document.getElementById("greeting_words")];
-
-//a normal sequence shows up below.
-//avoid a blank time of a screen until Clock.js starts.(in this case 15 secs.)
 const initial_t = new Date();
 initial_t.getHours;
-screenChanger(initial_t); //function hoisted.
-
-//yielding a worker named Clock.js, which sits outside of a main thread,
-//of which counterpart is named TimeSeeker that does inside of a main thread.
+screenChanger(initial_t);
 if (window.Worker) {
   const TimeSeeker = new Worker("./clock.js", {
     type: "module",
@@ -60,9 +50,6 @@ if (window.Worker) {
     "no_worker"
   ).textContent = `Web workerを有効にしてください。`;
 }
-
-//yielding a worker named Time.js, which sits outside of a main thread,
-//of which counterpart is named TimeProcessor that does inside of a main thread.
 if (window.Worker) {
   const TimeProcessor = new Worker("./time.js", {
     type: "module",
@@ -77,8 +64,6 @@ if (window.Worker) {
     "no_worker"
   ).textContent = `Web workerを有効にしてください。`;
 }
-
-//getting the backgroundImages and the greeting words shown up for each time slot, accordingly.
 function screenChanger(t) {
   if (t >= dawn && t < f_half_morning) {
     writeText[0].textContent = txt[0];
@@ -113,8 +98,6 @@ function screenChanger(t) {
     }
   }
 }
-
-//storing their visiting times this site in their own localStorage embedded in their own browsers.
 const counter = function () {
   if (!localStorage["times"]) {
     localStorage["times"] = 0;
@@ -129,12 +112,7 @@ const counter = function () {
     ]} 回目の訪問にお礼申し上げます。`;
   }
 };
-
 counter();
-
-//////////////////////////////////////////////////////////////////////////////
-//added following buttons for those who can't wait for each actual time slot.//
-//////////////////////////////////////////////////////////////////////////////
 const btn = [
   document.getElementById("dawn"),
   document.getElementById("f_half_morning"),
@@ -144,15 +122,12 @@ const btn = [
   document.getElementById("evening"),
   document.getElementById("nighttime"),
 ];
-
 for (let i = 0; i < btn.length; i++) {
   btn[i].addEventListener("click", () => {
     writeText[0].textContent = txt[i];
     document.body.style.backgroundImage = url[i];
   });
 }
-
-// control fullscreen(enter/exit)
 const toggleBtn = document.getElementById("toggleBtn");
 toggleBtn.addEventListener("click", () => {
   if (!document.fullscreenElement) {
