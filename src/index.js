@@ -1,4 +1,5 @@
 import "./style.css";
+// import "./all.min.css";
 //defining the starting time to change expression of a screen for each time slot.
 const dawn = new Date();
 dawn.setHours(4, 30, 0); //dawn.
@@ -16,7 +17,7 @@ const nighttime = new Date();
 nighttime.setHours(22, 0, 0); //nighttime.
 
 //constants
-const txt = [
+const TXT = [
     `夜明けはすべてを変えます。`,
     `素敵な朝をお過ごしください。`,
     `今日が快い一日でありますように。`,
@@ -25,14 +26,14 @@ const txt = [
     `今宵が穏やかでありますように。`,
     `安らぎとともにありますように。`,
 ];
-const url = [
-    "url('../img/dawn.webp')",
-    "url('../img/f_half_morning.webp')",
-    "url('../img/l_half_morning.webp')",
-    "url('../img/f_half_daytime.webp')",
-    "url('../img/l_half_daytime.webp')",
-    "url('../img/evening.webp')",
-    "url('../img/nighttime.webp')",
+const POINT = [
+    "url('./images/dawn.webp')",
+    "url('./images/f_half_morning.webp')",
+    "url('./images/l_half_morning.webp')",
+    "url('./images/f_half_daytime.webp')",
+    "url('./images/l_half_daytime.webp')",
+    "url('./images/evening.webp')",
+    "url('./images/nighttime.webp')",
 ];
 
 const writeText = [document.getElementById("greeting_words")];
@@ -78,31 +79,31 @@ if (window.Worker) {
 //getting the backgroundImages and the greeting words shown up for each time slot, accordingly.
 function screenChanger(t) {
     if (t >= dawn && t < f_half_morning) {
-        writeText[0].textContent = txt[0];
-        document.body.style.backgroundImage = url[0];
+        writeText[0].textContent = TXT[0];
+        document.body.style.backgroundImage = POINT[0];
     } else {
         if (t >= f_half_morning && t < l_half_morning) {
-            writeText[0].textContent = txt[1];
-            document.body.style.backgroundImage = url[1];
+            writeText[0].textContent = TXT[1];
+            document.body.style.backgroundImage = POINT[1];
         } else {
             if (t >= l_half_morning && t < f_half_daytime) {
-                writeText[0].textContent = txt[2];
-                document.body.style.backgroundImage = url[2];
+                writeText[0].textContent = TXT[2];
+                document.body.style.backgroundImage = POINT[2];
             } else {
                 if (t >= f_half_daytime && t < l_half_daytime) {
-                    writeText[0].textContent = txt[3];
-                    document.body.style.backgroundImage = url[3];
+                    writeText[0].textContent = TXT[3];
+                    document.body.style.backgroundImage = POINT[3];
                 } else {
                     if (t >= l_half_daytime && t < evening) {
-                        writeText[0].textContent = txt[4];
-                        document.body.style.backgroundImage = url[4];
+                        writeText[0].textContent = TXT[4];
+                        document.body.style.backgroundImage = POINT[4];
                     } else {
                         if (t >= evening && t < nighttime) {
-                            writeText[0].textContent = txt[5];
-                            document.body.style.backgroundImage = url[5];
+                            writeText[0].textContent = TXT[5];
+                            document.body.style.backgroundImage = POINT[5];
                         } else {
-                            writeText[0].textContent = txt[6];
-                            document.body.style.backgroundImage = url[6];
+                            writeText[0].textContent = TXT[6];
+                            document.body.style.backgroundImage = POINT[6];
                         }
                     }
                 }
@@ -144,8 +145,8 @@ const btn = [
 
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", () => {
-        writeText[0].textContent = txt[i];
-        document.body.style.backgroundImage = url[i];
+        writeText[0].textContent = TXT[i];
+        document.body.style.backgroundImage = POINT[i];
     });
 }
 

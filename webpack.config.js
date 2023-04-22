@@ -1,6 +1,8 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const devMode = process.env.NODE_ENV !== "production";
 
@@ -22,6 +24,24 @@ module.exports = {
     devMiddleware: {
       writeToDisk: true,
     },
+  },
+
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin(
+        {
+          terserOptions: {
+            ecma: 5,
+            compress: true,
+            output: {
+              comments: false,
+              beautify: false,
+            },
+          },
+        },
+      ),
+    ],
   },
 
   module: {
@@ -58,15 +78,30 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][ext][query]",
+        }
+      },
     ],
   },
+
   plugins: [
     new MiniCssExtractPlugin({
       filename: "style.css",
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      favicon: "./img/favicon.ico",
+      favicon: "./src/favicon.ico",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/images/", to: "./images/" },
+        { from: "src/all.min.css", to: "./all.min.css" },
+        { from: "src/webfonts/", to: "./webfonts/" },
+      ],
     }),
   ],
   devtool: devMode ? "source-map" : "eval",
