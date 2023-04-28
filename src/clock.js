@@ -1,0 +1,1 @@
+addEventListener("message",(e=>{"move"===e.data&&setInterval((()=>{let e=new Date;e.getHours,postMessage(e)}),15e3)}));
