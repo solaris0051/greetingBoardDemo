@@ -1,1 +1,9 @@
-addEventListener("message",(e=>{"move"===e.data&&setInterval((()=>{let e=new Date;e.getHours,postMessage(e)}),15e3)}));
+addEventListener("message", (event) => {
+    if (event.data === `move`) {
+        setInterval(() => {
+            let cto = new Date();
+            cto.getHours;
+            postMessage(cto);
+        }, 15 * 1000);
+    }
+});
