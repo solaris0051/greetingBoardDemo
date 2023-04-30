@@ -10,16 +10,6 @@
     "watch": "webpack --mode development --watch",
     "start": "webpack serve --mode development"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/solaris0051/greetingBoard.git"
-  },
-  "keywords": [],
-  "author": "",
-  "bugs": {
-    "url": "https://github.com/solaris0051/greetingBoard/issues"
-  },
-  "homepage": "https://github.com/solaris0051/greetingBoard#readme",
   "devDependencies": {
     "@babel/core": "^7.21.5",
     "@babel/preset-env": "^7.21.5",
