@@ -158,7 +158,7 @@ toggleBtn.addEventListener("click", () => {
         document.getElementById("toggleIcon").className =
             "fa-sharp fa-solid fa-minimize";
     } else {
-        if (document.exitFullscreen) {
+        if (document.fullscreenElement) {
             document.exitFullscreen();
             document.getElementById("toggleIcon").className =
                 "fa-sharp fa-solid fa-maximize";
