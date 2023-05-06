@@ -99,8 +99,6 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "src/images/", to: "./images/" },
-        { from: "src/all.min.css", to: "./all.min.css" },
-        { from: "src/webfonts/", to: "./webfonts/" },
       ],
     }),
   ],

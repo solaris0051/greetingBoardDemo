@@ -1,5 +1,14 @@
 import "./style.css";
-// import "./all.min.css";
+import "./assets/fontawesome/css/all.min.css";
+import "./assets/fontawesome/webfonts/fa-brands-400.ttf";
+import "./assets/fontawesome/webfonts/fa-brands-400.woff2";
+import "./assets/fontawesome/webfonts/fa-regular-400.ttf";
+import "./assets/fontawesome/webfonts/fa-regular-400.woff2";
+import "./assets/fontawesome/webfonts/fa-solid-900.ttf";
+import "./assets/fontawesome/webfonts/fa-solid-900.woff2";
+import "./assets/fontawesome/webfonts/fa-v4compatibility.ttf";
+import "./assets/fontawesome/webfonts/fa-v4compatibility.woff2";
+
 //defining the starting time to change expression of a screen for each time slot.
 const dawn = new Date();
 dawn.setHours(4, 30, 0); //dawn.
@@ -156,12 +165,12 @@ toggleBtn.addEventListener("click", () => {
     if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
         document.getElementById("toggleIcon").className =
-            "fa-sharp fa-solid fa-minimize";
+            "fa-sharp fa-solid fa-minimize fa-fade";
     } else {
         if (document.fullscreenElement) {
             document.exitFullscreen();
             document.getElementById("toggleIcon").className =
-                "fa-sharp fa-solid fa-maximize";
+                "fa-sharp fa-solid fa-maximize fa-fade";
         }
     }
 });
