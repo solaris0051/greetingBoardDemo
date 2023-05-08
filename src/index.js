@@ -43,7 +43,7 @@ const TXT = [
     `今宵が穏やかでありますように。`,
     `安らぎとともにありますように。`,
 ];
-const POINT = [
+const IMG_URL_STRING = [
     "url('./images/dawn.webp')",
     "url('./images/f_half_morning.webp')",
     "url('./images/l_half_morning.webp')",
@@ -97,30 +97,30 @@ if (window.Worker) {
 function screenChanger(t) {
     if (t >= dawn && t < f_half_morning) {
         writeText[0].textContent = TXT[0];
-        document.body.style.backgroundImage = POINT[0];
+        document.body.style.backgroundImage = IMG_URL_STRING[0];
     } else {
         if (t >= f_half_morning && t < l_half_morning) {
             writeText[0].textContent = TXT[1];
-            document.body.style.backgroundImage = POINT[1];
+            document.body.style.backgroundImage = IMG_URL_STRING[1];
         } else {
             if (t >= l_half_morning && t < f_half_daytime) {
                 writeText[0].textContent = TXT[2];
-                document.body.style.backgroundImage = POINT[2];
+                document.body.style.backgroundImage = IMG_URL_STRING[2];
             } else {
                 if (t >= f_half_daytime && t < l_half_daytime) {
                     writeText[0].textContent = TXT[3];
-                    document.body.style.backgroundImage = POINT[3];
+                    document.body.style.backgroundImage = IMG_URL_STRING[3];
                 } else {
                     if (t >= l_half_daytime && t < evening) {
                         writeText[0].textContent = TXT[4];
-                        document.body.style.backgroundImage = POINT[4];
+                        document.body.style.backgroundImage = IMG_URL_STRING[4];
                     } else {
                         if (t >= evening && t < nighttime) {
                             writeText[0].textContent = TXT[5];
-                            document.body.style.backgroundImage = POINT[5];
+                            document.body.style.backgroundImage = IMG_URL_STRING[5];
                         } else {
                             writeText[0].textContent = TXT[6];
-                            document.body.style.backgroundImage = POINT[6];
+                            document.body.style.backgroundImage = IMG_URL_STRING[6];
                         }
                     }
                 }
@@ -163,7 +163,7 @@ const btn = [
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", () => {
         writeText[0].textContent = TXT[i];
-        document.body.style.backgroundImage = POINT[i];
+        document.body.style.backgroundImage = IMG_URL_STRING[i];
     });
 }
 
