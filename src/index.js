@@ -50,7 +50,7 @@ const POINT = [
     "url('./images/f_half_daytime.webp')",
     "url('./images/l_half_daytime.webp')",
     "url('./images/evening.webp')",
-    "url('./mages/nighttime.webp')",
+    "url('./images/nighttime.webp')",
 ];
 
 const writeText = [document.getElementById("greeting_words")];
