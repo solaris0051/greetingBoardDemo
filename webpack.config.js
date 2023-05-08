@@ -2,7 +2,6 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
 
 const devMode = process.env.NODE_ENV !== "production";
 
@@ -13,6 +12,7 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    assetModuleFilename: "images/[name][ext][query]",
   },
 
   devServer: {
@@ -79,6 +79,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.webp$/i,
+        type: 'asset/resource'
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
         generator: {
@@ -95,11 +99,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       favicon: "./src/favicon.ico",
-    }),
-    new CopyPlugin({
-      patterns: [
-        { from: "src/images/", to: "./images/" },
-      ],
     }),
   ],
   devtool: devMode ? "source-map" : "eval",
