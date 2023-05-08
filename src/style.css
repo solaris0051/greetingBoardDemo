@@ -18,6 +18,13 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  background-image: url('./assets/images/dawn.webp');
+  background-image: url('./assets/images/f_half_morning.webp');
+  background-image: url('./assets/images/l_half_morning.webp');
+  background-image: url('./assets/images/f_half_daytime.webp');
+  background-image: url('./assets/images/l_half_daytime.webp');
+  background-image: url('./assets/images/evening.webp');
+  background-image: url('./assets/images/nighttime.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
