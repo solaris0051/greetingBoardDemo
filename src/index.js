@@ -42,7 +42,7 @@ const TXT = [
     `至福の午後を過ごされますように。`,
     `今宵が穏やかでありますように。`,
     `安らぎとともにありますように。`,
-]
+];
 
 const IMG_URL_STRING = [
     "url('./images/dawn.webp')",
