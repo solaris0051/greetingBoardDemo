@@ -5,5 +5,5 @@ addEventListener("message", (event) => {
             cto.getHours;
             postMessage(cto);
         }, 15 * 1000);
-    };
+    }
 })
