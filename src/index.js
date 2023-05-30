@@ -54,10 +54,6 @@ const IMG_URL_STRING = [
     "url('./images/nighttime.webp')",
 ];
 
-for (let i = 0; i < IMG_URL_STRING.length; i++) {
-    document.body.style.backgroundImage = IMG_URL_STRING[i];
-}
-
 const writeText = [document.getElementById("greeting_words")];
 
 //a normal sequence shows up below.
