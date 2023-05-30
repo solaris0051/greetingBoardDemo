@@ -10,5 +10,5 @@ addEventListener("message", (event) => {
             let ss = `${0}${currentTime.getSeconds()}`.slice(-2);
             postMessage(`${yy}年${mo}月${dd}日 ${hh}:${mm}:${ss}`);
         }, 100);
-    }
-});
+    };
+})

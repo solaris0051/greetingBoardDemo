@@ -42,7 +42,8 @@ const TXT = [
     `至福の午後を過ごされますように。`,
     `今宵が穏やかでありますように。`,
     `安らぎとともにありますように。`,
-];
+]
+
 const IMG_URL_STRING = [
     "url('./images/dawn.webp')",
     "url('./images/f_half_morning.webp')",
@@ -121,12 +122,12 @@ function screenChanger(t) {
                         } else {
                             writeText[0].textContent = TXT[6];
                             document.body.style.backgroundImage = IMG_URL_STRING[6];
-                        }
-                    }
-                }
-            }
-        }
-    }
+                        };
+                    };
+                };
+            };
+        };
+    };
 }
 
 //storing their visiting times this site in their own localStorage embedded in their own browsers.
@@ -135,15 +136,11 @@ const counter = function () {
         localStorage["times"] = 0;
     }
     if (localStorage["times"] == 0) {
-        document.getElementById("cntr_text").innerHTML = `${++localStorage[
-            "times"
-        ]} 回目のご訪問ありがとうございます。`;
+        document.getElementById("cntr_text").innerHTML = `${++localStorage["times"]} 回目のご訪問ありがとうございます。`;
     } else {
-        document.getElementById("cntr_text").innerHTML = `${++localStorage[
-            "times"
-        ]} 回目の訪問にお礼申し上げます。`;
-    }
-};
+        document.getElementById("cntr_text").innerHTML = `${++localStorage["times"]} 回目の訪問にお礼申し上げます。`;
+    };
+}
 
 counter();
 
@@ -179,6 +176,6 @@ toggleBtn.addEventListener("click", () => {
             document.exitFullscreen();
             document.getElementById("toggleIcon").className =
                 "fa-sharp fa-solid fa-maximize fa-fade";
-        }
-    }
-});
+        };
+    };
+})
