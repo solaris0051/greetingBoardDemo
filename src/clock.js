@@ -4,5 +4,5 @@ addEventListener("message", (event) => {
             let cto = new Date();
             postMessage(cto);
         }, 15 * 1000);
-    };
+    }
 })
