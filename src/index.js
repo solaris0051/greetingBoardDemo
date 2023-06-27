@@ -98,6 +98,10 @@ function screenChanger(t) {
     if (t >= dawn && t < f_half_morning) {
         writeText[0].textContent = TXT[0];
         document.body.style.backgroundImage = IMG_URL_STRING[0];
+        setInterval(() => {
+            let i = ++i;
+            document.body.style.backgroundImage = IMG_URL_STRING[i];
+        }, 5000);
     } else {
         if (t >= f_half_morning && t < l_half_morning) {
             writeText[0].textContent = TXT[1];
@@ -114,10 +118,36 @@ function screenChanger(t) {
                     if (t >= l_half_daytime && t < evening) {
                         writeText[0].textContent = TXT[4];
                         document.body.style.backgroundImage = IMG_URL_STRING[4];
+                        setInterval(() => {
+                            let i = 4;
+                            i = ++i;
+                            document.body.style.backgroundImage = IMG_URL_STRING[i];
+                        }, 5000);
                     } else {
                         if (t >= evening && t < nighttime) {
                             writeText[0].textContent = TXT[5];
                             document.body.style.backgroundImage = IMG_URL_STRING[5];
+                            setInterval(() => {
+                                document.body.style.backgroundImage = IMG_URL_STRING[6];
+                                setTimeout(() => {
+                                    document.body.style.backgroundImage = IMG_URL_STRING[0];
+                                    setTimeout(() => {
+                                        document.body.style.backgroundImage = IMG_URL_STRING[1];
+                                        setTimeout(() => {
+                                            document.body.style.backgroundImage = IMG_URL_STRING[2];
+                                            setTimeout(() => {
+                                                document.body.style.backgroundImage = IMG_URL_STRING[3];
+                                                setTimeout(() => {
+                                                    document.body.style.backgroundImage = IMG_URL_STRING[4];
+                                                    setTimeout(() => {
+                                                        document.body.style.backgroundImage = IMG_URL_STRING[5];
+                                                    }, 5000);
+                                                }, 5000);
+                                            }, 5000);
+                                        }, 5000);
+                                    }, 5000);
+                                }, 5000);
+                            }, 35000)
                         } else {
                             writeText[0].textContent = TXT[6];
                             document.body.style.backgroundImage = IMG_URL_STRING[6];
