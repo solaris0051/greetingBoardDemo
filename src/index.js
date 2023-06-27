@@ -9,12 +9,11 @@ import "./assets/fontawesome/webfonts/fa-solid-900.woff2";
 import "./assets/fontawesome/webfonts/fa-v4compatibility.ttf";
 import "./assets/fontawesome/webfonts/fa-v4compatibility.woff2";
 import "./assets/images/dawn.webp";
-import "./assets/images/evening.webp";
-import "./assets/images/f_half_daytime.webp";
 import "./assets/images/f_half_morning.webp";
+import "./assets/images/l_half_morning.webp";
+import "./assets/images/f_half_daytime.webp";
 import "./assets/images/l_half_daytime.webp";
-import "./assets/images/l_half_morning.webp";
-import "./assets/images/l_half_morning.webp";
+import "./assets/images/evening.webp";
 import "./assets/images/nighttime.webp";
 
 //defining the starting time to change expression of a screen for each time slot.
