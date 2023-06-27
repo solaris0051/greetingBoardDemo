@@ -99,30 +99,126 @@ function screenChanger(t) {
         writeText[0].textContent = TXT[0];
         document.body.style.backgroundImage = IMG_URL_STRING[0];
         setInterval(() => {
-            let i = ++i;
-            document.body.style.backgroundImage = IMG_URL_STRING[i];
-        }, 5000);
+            document.body.style.backgroundImage = IMG_URL_STRING[1];
+            setTimeout(() => {
+                document.body.style.backgroundImage = IMG_URL_STRING[2];
+                setTimeout(() => {
+                    document.body.style.backgroundImage = IMG_URL_STRING[3];
+                    setTimeout(() => {
+                        document.body.style.backgroundImage = IMG_URL_STRING[4];
+                        setTimeout(() => {
+                            document.body.style.backgroundImage = IMG_URL_STRING[5];
+                            setTimeout(() => {
+                                document.body.style.backgroundImage = IMG_URL_STRING[6];
+                                setTimeout(() => {
+                                    document.body.style.backgroundImage = IMG_URL_STRING[0];
+                                }, 5000);
+                            }, 5000);
+                        }, 5000);
+                    }, 5000);
+                }, 5000);
+            }, 5000);
+        }, 35000)
     } else {
         if (t >= f_half_morning && t < l_half_morning) {
             writeText[0].textContent = TXT[1];
             document.body.style.backgroundImage = IMG_URL_STRING[1];
+            setInterval(() => {
+                document.body.style.backgroundImage = IMG_URL_STRING[2];
+                setTimeout(() => {
+                    document.body.style.backgroundImage = IMG_URL_STRING[3];
+                    setTimeout(() => {
+                        document.body.style.backgroundImage = IMG_URL_STRING[4];
+                        setTimeout(() => {
+                            document.body.style.backgroundImage = IMG_URL_STRING[5];
+                            setTimeout(() => {
+                                document.body.style.backgroundImage = IMG_URL_STRING[6];
+                                setTimeout(() => {
+                                    document.body.style.backgroundImage = IMG_URL_STRING[0];
+                                    setTimeout(() => {
+                                        document.body.style.backgroundImage = IMG_URL_STRING[1];
+                                    }, 5000);
+                                }, 5000);
+                            }, 5000);
+                        }, 5000);
+                    }, 5000);
+                }, 5000);
+            }, 35000)
         } else {
             if (t >= l_half_morning && t < f_half_daytime) {
                 writeText[0].textContent = TXT[2];
                 document.body.style.backgroundImage = IMG_URL_STRING[2];
+                setInterval(() => {
+                    document.body.style.backgroundImage = IMG_URL_STRING[3];
+                    setTimeout(() => {
+                        document.body.style.backgroundImage = IMG_URL_STRING[4];
+                        setTimeout(() => {
+                            document.body.style.backgroundImage = IMG_URL_STRING[5];
+                            setTimeout(() => {
+                                document.body.style.backgroundImage = IMG_URL_STRING[6];
+                                setTimeout(() => {
+                                    document.body.style.backgroundImage = IMG_URL_STRING[0];
+                                    setTimeout(() => {
+                                        document.body.style.backgroundImage = IMG_URL_STRING[1];
+                                        setTimeout(() => {
+                                            document.body.style.backgroundImage = IMG_URL_STRING[2];
+                                        }, 5000);
+                                    }, 5000);
+                                }, 5000);
+                            }, 5000);
+                        }, 5000);
+                    }, 5000);
+                }, 35000)
             } else {
                 if (t >= f_half_daytime && t < l_half_daytime) {
                     writeText[0].textContent = TXT[3];
                     document.body.style.backgroundImage = IMG_URL_STRING[3];
+                    setInterval(() => {
+                        document.body.style.backgroundImage = IMG_URL_STRING[4];
+                        setTimeout(() => {
+                            document.body.style.backgroundImage = IMG_URL_STRING[5];
+                            setTimeout(() => {
+                                document.body.style.backgroundImage = IMG_URL_STRING[6];
+                                setTimeout(() => {
+                                    document.body.style.backgroundImage = IMG_URL_STRING[0];
+                                    setTimeout(() => {
+                                        document.body.style.backgroundImage = IMG_URL_STRING[1];
+                                        setTimeout(() => {
+                                            document.body.style.backgroundImage = IMG_URL_STRING[2];
+                                            setTimeout(() => {
+                                                document.body.style.backgroundImage = IMG_URL_STRING[3];
+                                            }, 5000);
+                                        }, 5000);
+                                    }, 5000);
+                                }, 5000);
+                            }, 5000);
+                        }, 5000);
+                    }, 35000)
                 } else {
                     if (t >= l_half_daytime && t < evening) {
                         writeText[0].textContent = TXT[4];
                         document.body.style.backgroundImage = IMG_URL_STRING[4];
                         setInterval(() => {
-                            let i = 4;
-                            i = ++i;
-                            document.body.style.backgroundImage = IMG_URL_STRING[i];
-                        }, 5000);
+                            document.body.style.backgroundImage = IMG_URL_STRING[5];
+                            setTimeout(() => {
+                                document.body.style.backgroundImage = IMG_URL_STRING[6];
+                                setTimeout(() => {
+                                    document.body.style.backgroundImage = IMG_URL_STRING[0];
+                                    setTimeout(() => {
+                                        document.body.style.backgroundImage = IMG_URL_STRING[1];
+                                        setTimeout(() => {
+                                            document.body.style.backgroundImage = IMG_URL_STRING[2];
+                                            setTimeout(() => {
+                                                document.body.style.backgroundImage = IMG_URL_STRING[3];
+                                                setTimeout(() => {
+                                                    document.body.style.backgroundImage = IMG_URL_STRING[4];
+                                                }, 5000);
+                                            }, 5000);
+                                        }, 5000);
+                                    }, 5000);
+                                }, 5000);
+                            }, 5000);
+                        }, 35000)
                     } else {
                         if (t >= evening && t < nighttime) {
                             writeText[0].textContent = TXT[5];
@@ -151,6 +247,27 @@ function screenChanger(t) {
                         } else {
                             writeText[0].textContent = TXT[6];
                             document.body.style.backgroundImage = IMG_URL_STRING[6];
+                            setInterval(() => {
+                                document.body.style.backgroundImage = IMG_URL_STRING[0];
+                                setTimeout(() => {
+                                    document.body.style.backgroundImage = IMG_URL_STRING[1];
+                                    setTimeout(() => {
+                                        document.body.style.backgroundImage = IMG_URL_STRING[2];
+                                        setTimeout(() => {
+                                            document.body.style.backgroundImage = IMG_URL_STRING[3];
+                                            setTimeout(() => {
+                                                document.body.style.backgroundImage = IMG_URL_STRING[4];
+                                                setTimeout(() => {
+                                                    document.body.style.backgroundImage = IMG_URL_STRING[5];
+                                                    setTimeout(() => {
+                                                        document.body.style.backgroundImage = IMG_URL_STRING[6];
+                                                    }, 5000);
+                                                }, 5000);
+                                            }, 5000);
+                                        }, 5000);
+                                    }, 5000);
+                                }, 5000);
+                            }, 35000)
                         }
                     }
                 }
