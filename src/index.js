@@ -63,20 +63,20 @@ screenChanger(initial_t); //function hoisted.
 
 //yielding a worker named Clock.js, which sits outside of a main thread,
 //of which counterpart is named TimeSeeker that does inside of a main thread.
-if (window.Worker) {
-    const TimeSeeker = new Worker(new URL("./clock.js", import.meta.url));
-    TimeSeeker.postMessage(`move`);
-    TimeSeeker.addEventListener("message", (event) => {
-        let cti = event.data;
-        //function hoisted.
-        screenChanger(cti);
-    });
-} else {
-    document.getElementById("no_worker").removeAttribute("hidden");
-    document.getElementById(
-        "no_worker"
-    ).textContent = `Web workerを有効にしてください。`;
-}
+// if (window.Worker) {
+//     const TimeSeeker = new Worker(new URL("./clock.js", import.meta.url));
+//     TimeSeeker.postMessage(`move`);
+//     TimeSeeker.addEventListener("message", (event) => {
+//         let cti = event.data;
+//         //function hoisted.
+//         screenChanger(cti);
+//     });
+// } else {
+//     document.getElementById("no_worker").removeAttribute("hidden");
+//     document.getElementById(
+//         "no_worker"
+//     ).textContent = `Web workerを有効にしてください。`;
+// }
 
 //yielding a worker named Time.js, which sits outside of a main thread,
 //of which counterpart is named TimeProcessor that does inside of a main thread.
