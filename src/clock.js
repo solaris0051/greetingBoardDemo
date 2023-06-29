@@ -3,6 +3,6 @@ addEventListener("message", (event) => {
         setInterval(() => {
             let cto = new Date();
             postMessage(cto);
-        }, 35 * 1000);
+        }, 40 * 1000);
     }
 })
