@@ -99,23 +99,33 @@ function screenChanger(t) {
         writeText[0].textContent = TXT[0];
         document.body.style.backgroundImage = IMG_URL_STRING[0];
         setInterval(() => {
+            writeText[0].textContent = TXT[1];
             document.body.style.backgroundImage = IMG_URL_STRING[1];
             setTimeout(() => {
+                writeText[0].textContent = TXT[2];
                 document.body.style.backgroundImage = IMG_URL_STRING[2];
                 setTimeout(() => {
+                    writeText[0].textContent = TXT[3];
                     document.body.style.backgroundImage = IMG_URL_STRING[3];
                     setTimeout(() => {
+                        writeText[0].textContent = TXT[4];
                         document.body.style.backgroundImage = IMG_URL_STRING[4];
                         setTimeout(() => {
+                            writeText[0].textContent = TXT[5];
                             document.body.style.backgroundImage = IMG_URL_STRING[5];
                             setTimeout(() => {
+                                writeText[0].textContent = TXT[6];
                                 document.body.style.backgroundImage = IMG_URL_STRING[6];
+                                setTimeout(() => {
+                                    writeText[0].textContent = TXT[0];
+                                    document.body.style.backgroundImage = IMG_URL_STRING[0];
+                                }, 5000);
                             }, 5000);
                         }, 5000);
                     }, 5000);
                 }, 5000);
             }, 5000);
-        }, 30000)
+        }, 35000)
     } else {
         if (t >= f_half_morning && t < l_half_morning) {
             writeText[0].textContent = TXT[1];
@@ -138,12 +148,16 @@ function screenChanger(t) {
                                 setTimeout(() => {
                                     writeText[0].textContent = TXT[0];
                                     document.body.style.backgroundImage = IMG_URL_STRING[0];
+                                    setTimeout(() => {
+                                        writeText[0].textContent = TXT[1];
+                                        document.body.style.backgroundImage = IMG_URL_STRING[1];
+                                    }, 5000);
                                 }, 5000);
                             }, 5000);
                         }, 5000);
                     }, 5000);
                 }, 5000);
-            }, 30000)
+            }, 35000)
         } else {
             if (t >= l_half_morning && t < f_half_daytime) {
                 writeText[0].textContent = TXT[2];
@@ -166,12 +180,16 @@ function screenChanger(t) {
                                     setTimeout(() => {
                                         writeText[0].textContent = TXT[1];
                                         document.body.style.backgroundImage = IMG_URL_STRING[1];
+                                        setTimeout(() => {
+                                            writeText[0].textContent = TXT[2];
+                                            document.body.style.backgroundImage = IMG_URL_STRING[2];
+                                        }, 5000);
                                     }, 5000);
                                 }, 5000);
                             }, 5000);
                         }, 5000);
                     }, 5000);
-                }, 30000)
+                }, 35000)
             } else {
                 if (t >= f_half_daytime && t < l_half_daytime) {
                     writeText[0].textContent = TXT[3];
@@ -194,12 +212,16 @@ function screenChanger(t) {
                                         setTimeout(() => {
                                             writeText[0].textContent = TXT[2];
                                             document.body.style.backgroundImage = IMG_URL_STRING[2];
+                                            setTimeout(() => {
+                                                writeText[0].textContent = TXT[3];
+                                                document.body.style.backgroundImage = IMG_URL_STRING[3];
+                                            }, 5000);
                                         }, 5000);
                                     }, 5000);
                                 }, 5000);
                             }, 5000);
                         }, 5000);
-                    }, 30000)
+                    }, 35000)
                 } else {
                     if (t >= l_half_daytime && t < evening) {
                         writeText[0].textContent = TXT[4];
@@ -222,12 +244,16 @@ function screenChanger(t) {
                                             setTimeout(() => {
                                                 writeText[0].textContent = TXT[3];
                                                 document.body.style.backgroundImage = IMG_URL_STRING[3];
+                                                setTimeout(() => {
+                                                    writeText[0].textContent = TXT[4];
+                                                    document.body.style.backgroundImage = IMG_URL_STRING[4];
+                                                }, 5000);
                                             }, 5000);
                                         }, 5000);
                                     }, 5000);
                                 }, 5000);
                             }, 5000);
-                        }, 30000)
+                        }, 35000)
                     } else {
                         if (t >= evening && t < nighttime) {
                             writeText[0].textContent = TXT[5];
@@ -250,12 +276,16 @@ function screenChanger(t) {
                                                 setTimeout(() => {
                                                     writeText[0].textContent = TXT[4];
                                                     document.body.style.backgroundImage = IMG_URL_STRING[4];
+                                                    setTimeout(() => {
+                                                        writeText[0].textContent = TXT[5];
+                                                        document.body.style.backgroundImage = IMG_URL_STRING[5];
+                                                    }, 5000);
                                                 }, 5000);
                                             }, 5000);
                                         }, 5000);
                                     }, 5000);
                                 }, 5000);
-                            }, 30000)
+                            }, 35000)
                         } else {
                             writeText[0].textContent = TXT[6];
                             document.body.style.backgroundImage = IMG_URL_STRING[6];
@@ -277,12 +307,16 @@ function screenChanger(t) {
                                                 setTimeout(() => {
                                                     writeText[0].textContent = TXT[5];
                                                     document.body.style.backgroundImage = IMG_URL_STRING[5];
+                                                    setTimeout(() => {
+                                                        writeText[0].textContent = TXT[6];
+                                                        document.body.style.backgroundImage = IMG_URL_STRING[6];
+                                                    }, 5000);
                                                 }, 5000);
                                             }, 5000);
                                         }, 5000);
                                     }, 5000);
                                 }, 5000);
-                            }, 30000)
+                            }, 35000)
                         }
                     }
                 }
