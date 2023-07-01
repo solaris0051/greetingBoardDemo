@@ -58,7 +58,7 @@ const writeText = [document.getElementById("greeting_words")];
 //a normal sequence shows up below.
 const initial_t = new Date();
 initial_t.getHours;
-addEventListener("load", preScreenChanger); //function hoisted.
+addEventListener("load", preScreenChanger(initial_t)); //function hoisted.
 screenChanger(initial_t); //function hoisted.
 
 //yielding a worker named Time.js, which sits outside of a main thread,
