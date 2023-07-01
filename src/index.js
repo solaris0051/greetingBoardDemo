@@ -403,10 +403,10 @@ function screenChanger(t) {
                     }, 35000);
                 } else {
                     if (t >= l_half_daytime && t < evening) {
-                        setTimeout(() => {
+                        setInterval(() => {
                             writeText[0].textContent = TXT[4];
                             document.body.style.backgroundImage = IMG_URL_STRING[4];
-                            setInterval(() => {
+                            setTimeout(() => {
                                 writeText[0].textContent = TXT[5];
                                 document.body.style.backgroundImage = IMG_URL_STRING[5];
                                 setTimeout(() => {
