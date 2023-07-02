@@ -137,7 +137,7 @@ function preScreenChanger(t) {
             if (t >= l_half_morning && t < f_half_daytime) {
                 writeText[0].textContent = TXT[2];
                 document.body.style.backgroundImage = IMG_URL_STRING[2];
-                setInterval(() => {
+                setTimeout(() => {
                     writeText[0].textContent = TXT[3];
                     document.body.style.backgroundImage = IMG_URL_STRING[3];
                     setTimeout(() => {
