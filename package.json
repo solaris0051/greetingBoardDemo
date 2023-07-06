@@ -14,7 +14,7 @@
     "semver": "7.5.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.7",
+    "@babel/core": "^7.22.8",
     "@babel/preset-env": "^7.22.7",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.8.1",
