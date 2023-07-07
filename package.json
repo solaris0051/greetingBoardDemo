@@ -10,9 +10,6 @@
     "watch": "webpack --mode development --watch",
     "start": "webpack serve --mode development"
   },
-  "overrides": {
-    "semver": "7.5.3"
-  },
   "devDependencies": {
     "@babel/core": "^7.22.8",
     "@babel/preset-env": "^7.22.7",
