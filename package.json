@@ -11,20 +11,20 @@
     "start": "webpack serve --mode development"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.2",
+    "@babel/core": "^8.0.7",
+    "@babel/preset-env": "^8.0.7",
     "babel-loader": "^10.1.1",
-    "css-loader": "^7.1.4",
+    "css-loader": "^7.1.5",
     "css-minimizer-webpack-plugin": "^8.0.0",
-    "html-webpack-plugin": "^5.6.6",
+    "html-webpack-plugin": "^5.6.8",
     "mini-css-extract-plugin": "^2.10.2",
-    "postcss": "^8.5.9",
+    "postcss": "^8.5.29",
     "postcss-loader": "^8.2.1",
-    "postcss-preset-env": "^11.2.0",
+    "postcss-preset-env": "^11.6.1",
     "style-loader": "^4.0.0",
-    "terser-webpack-plugin": "^5.4.0",
-    "webpack": "^5.106.1",
-    "webpack-cli": "^7.0.2",
-    "webpack-dev-server": "^5.2.3"
+    "terser-webpack-plugin": "^5.6.1",
+    "webpack": "^5.111.1",
+    "webpack-cli": "^7.2.3",
+    "webpack-dev-server": "^6.0.0"
   }
 }
